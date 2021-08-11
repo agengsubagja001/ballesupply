@@ -271,23 +271,7 @@
                                         <div class="row container">
                                             <div class="col-md-6 text-left mb-5">
                                                 <h5>Deskripsi</h3>
-                                                <p style="white-space: pre-wrap;">‼️MOHON TANYA STOCK DULU YA SEBELUM ORDER‼️
-
-The most wanted "Khalisa Instan” hijab super simple langsung slup tanpa ribet peniti atau pentul ini kembali restiock! MasyaAllah hijab ini solusi banget buat kamu yang ga suka ribet.
-
-Bahannya diamond crepe karena bahannya ringan, adem, jadi nyaman sekali nih buat dipake di rumah atau keluar juga mantul!
-
-Khalisa Instan tersedia 20 pilihan warna yang siap kamu bawa pulang
-
-Bahan : Diamond crepe
-Ukuran :
-Panjang depan 70 cm
-Panjang belakang 90 cm
-✔️Finishing : Lasercut 100% cantik!
-
-Yang udh tau kualitas produk hijabghaitsa udh gak pake main nunda lagi ? langsung cuuusss order dengan cara KLIK LIK DI BIO tanpa tapi, tanpa nanti karena klo ga kebagian nanti gigit jari ? !!
-
-#dailyhijab #bergodaily #diamonditaliano #bergoinstant #bergosyari #bergomurah #hijabrumahan #bergomaryam #bergotali #bergosimple</p>
+                                                <p style="white-space: pre-wrap;">‼️MOHON TANYA STOCK DULU YA SEBELUM ORDER‼️</p>
                                             </div>
 
                                             <div class="col-md-5 justify-content-center">
@@ -441,33 +425,7 @@ Yang udh tau kualitas produk hijabghaitsa udh gak pake main nunda lagi ? langsun
                                         <div class="row container">
                                             <div class="col-md-6 text-left mb-5">
                                                 <h5>Deskripsi</h3>
-                                                <p style="white-space: pre-wrap;">Kondisi: Baru
-Berat: 1.000 Gram
-Kategori: Pantofel Pria
-Etalase: Semua Etalase
-Sepatu ini sangat nyaman dipakai, bahan lembut tidak bikin kaki lecet.
-Sole memakai bahan thermoplastic rubber lentur dan tidak licin.
-
-Spesifikasi:
-Bahan : pu leather
-Linning : mesh
-Sole : eco rubber (tidak licin)
-Size : 37, 38, 39, 40, 41, 42, 43 ,44, 45
-Warna : Tan, coklat, hitam
-Sudah termasuk kotak/box, tisu, silica, dan packing rapih.
-
-Size chart
-37 = 22,5 cm
-38 = 23 cm
-39 = 24 cm
-40 = 25 cm
-41 = 26 cm
-42 = 27 cm
-43 = 28 cm
-44 = 29 cm
-45 = 30 cm (custom)
-46 = 31 cm (custom)
-47 = 32 cm (custom)</p>
+                                                <p style="white-space: pre-wrap;">Kondisi: Baru</p>
                                             </div>
 
                                             <div class="col-md-5 justify-content-center">
