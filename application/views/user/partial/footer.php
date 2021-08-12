@@ -1,11 +1,11 @@
     
     
-    <footer class="text-center text-lg-start bg-primary" style=" ">
+    <footer class="text-center text-lg-start bg-primary" style="background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
 
     <!-- Section: Links  -->
         <section class="pt-3 mt-5" style="background: #015EB6;">
             
-            <div class="container-fluid text-left text-White mt-5" style="max-width: 1340px;">
+            <div class="container-fluid text-left text-White;" style="max-width: 1340px;">
             <!-- Grid row -->
             <div class="row mt-3" style="color: #fff;">
 
@@ -31,7 +31,7 @@
                             <td> <p>Jl.kihiur 10,Cihapit,Bandung wetan</p></td>
                         </tr>
                     </table>
-                    <button type="button" class="btn btn-warning" style="border-radius: 20px;">Costomer Service</button>
+                    <a bhre="#" class="btn btn-warning" style="border-radius: 20px;font-weight:600">Costomer Service</a>
                 </div>
                 <!-- Grid column -->
 
@@ -43,15 +43,15 @@
                 </h6>
                     <table>
                         <tr>
-                            <td><img src=<?php echo base_url('assets/img/tokopedia.png') ?>></td>
-                            <td><a href="https://www.tokopedia.com/" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Tokopedia</a></td>
+                            <td><img src=<?php echo base_url('assets/img/tokopedia.png') ?> style="width:20px"></td>
+                            <td><a href="https://www.tokopedia.com/balesupply" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Tokopedia</a></td>
                         </tr>
                         <tr>
-                            <td><img src=<?php echo base_url('assets/img/shoppe.png')?>></td>
-                            <td><a href="https://shopee.co.id/" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Shoppe</a></td>
+                            <td><img src=<?php echo base_url('assets/img/shoppe.png')?> style="width:20px"></td>
+                            <td><a href="https://shopee.co.id/balesocks" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Shoppe</a></td>
                         </tr>  
                         <tr>
-                            <td><img src=<?php echo base_url('assets/img/lazada.png') ?>></td>
+                            <td><img src=<?php echo base_url('assets/img/lazada.png') ?> style="width:20px"></td>
                             <td><a href="https://www.lazada.co.id/" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Lazada</a></td>
                         </tr>                            
                     </table>
@@ -64,11 +64,11 @@
                     Support Pengiriman
                 </h6>
                 <div class="row">
-                <div class="col-md-12" style="transform: translateY(-30px); widht: 70px;" >
+                <div class="col-md-12" >
                     <table>
                             <tr>
-                                <td><img style="width: 80px;" src="<?php echo base_url('assets/img/JNE.png') ?> "></td>
-                                <td><img src="<?php echo base_url('assets/img/Sicepat.png') ?>"></td>
+                                <td><img style="width: 80px;" src="<?php echo base_url('assets/img/JNE.png') ?> " style="width:10px"></td>
+                                <td><img src="<?php echo base_url('assets/img/Sicepat.png') ?>" style="width:100px"></td>
                             </tr>
                     </table>
                 <!-- <img src="assets/img/img_jne.png" alt="">   -->
@@ -84,9 +84,9 @@
         </section>
         <!-- Section: Links  -->
         <!-- Copyright -->
-        <div class="text-white p-4" style="background-color:#0049A8; font-family:poppins; font-size:18px; font-style: normal; font-weight: 600; ">
+        <div class="text-white p-4" style="background-color:#0049A8; font-size:15px; font-style: normal; ">
             © 2021 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">BaleSupply</a>
+            <a class="text-white" href="#" style="font-weight: 600;">BALESUPPLY</a>
         </div>
         <!-- Copyright -->
     </footer>

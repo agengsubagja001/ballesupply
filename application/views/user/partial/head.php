@@ -28,7 +28,25 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <title>BaleSupply</title>
+		<!-- Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Raleway:wght@200&display=swap" rel="stylesheet">
+		<title>BaleSupply</title>
+		<style>
+			body {
+				/* Font Raleway */
+				font-family: 'Raleway', sans-serif;
+			}
+			.paralax{
+				background-image: url("<?php echo base_url('assets/img/banner.jpg') ?>");
+				min-height: 500px; 
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		</style>
   </head>
 </html>

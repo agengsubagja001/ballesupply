@@ -1,32 +1,20 @@
-<body>
-        <nav class="navbar navbar-light justify-content-between p-3" style="background: #0049A8; position: fixed; width: 100%; z-index: 10;">
-            <a class="font-family: Poppins; font-style: normal; font-weight: bold; font-size: 18px; line-height: 37px; display: flex; align-items: center; letter-spacing: 0.09em; color: #FFFFFF;" style="font-family: Poppins; font-style: normal; font-weight: bold; font-size: 18px; line-height: 37px; display: flex; align-items: center; letter-spacing: 0.09em; color: #FFFFFF;">BALESUPPLY</a>
-            <div class="form-inline">
-                
-                <!-- <a href="<?php echo base_url('user/keranjang') ?>"</a>> -->
-                 <!--  -->
-                
-            </div>
-        </nav>
-</body>
 
- <!-- pagination -->
+    
+		
+		<!-- Navbar Baru -->
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0049A8;color:#fff;margin-bottom:20px">
+			<a class="navbar-brand" href="#" style="font-weight: bold;font-family:Poppins;font-style:normal;color:#fff">BALESUPPLY</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" style="color:#fff" href="#">Blog</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- Navbar Baru Akhir -->
 
- 
-                <!-- <div class="col-md-12">
-                    <nav aria-label="Page navigation example mt-2">
-                        <ul class="pagination mt-2">
-                        <span style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; line-height: 45px; ">Jumlah produk per halaman</span>
-                            <li class="page-item">
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div> -->
+
