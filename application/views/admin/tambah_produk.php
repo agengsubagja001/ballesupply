@@ -47,85 +47,31 @@
                                                 <th scope="col">No</th>
                                                 <th scope="col">Produk</th>
                                                 <th scope="col">Nama Produk</th>
+                                                <th scope="col">Harga</th>
                                                 <th scope="col">Berat</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($barang as $brg) :?>
                                             <tr>
-                                                <td scope="row">1</td>
-                                                <td><img src="<?php echo base_url('assets/img/gambar4.jpg') ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>
-                                                <div class="row">
-                                                    <div class="col-md-2" style="padding:5px;">
-                                                            <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
-                                                    </div>
-                                                    <div class="col-md-2" style="padding:5px;">
-                                                    <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>
-                                                    </div>
-                                                </div>                           
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row">2</td>
-                                                <td><img src="<?php echo base_url('assets/img/gambar4.jpg') ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>
-                                                    <button type="button" class="btn" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
-                                                    <button type="button" class="btn" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row">3</td>
-                                                <td><img src="<?php echo base_url('assets/img/gambar4.jpg') ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-md-2" style="padding:5px;">
-                                                            <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
-                                                        </div>
-                                                        <div class="col-md-2" style="padding:5px;">
-                                                            <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>
-                                                        </div>
-                                                    </div> 
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                            <td scope="row">4</td>
-                                                <td><img src="<?php echo base_url('assets/img/gambar4.jpg') ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
+                                                <td><?php echo $brg->id_produk ?></td>
+                                                <td><img src="<?php echo base_url().'assets/gambar_utama/'. $brg->foto_utama ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
+                                                <td><?php echo $brg->nama_produk ?> </td>
+                                                <td><?php echo $brg->harga ?></td>
+                                                <td><?php echo $brg->berat ?></td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="col-md-2" style="padding:5px;">
                                                                 <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
                                                         </div>
                                                         <div class="col-md-2" style="padding:5px;">
-                                                            <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>
+                                                        <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>
                                                         </div>
-                                                    </div> 
+                                                    </div>                           
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td scope="row">5</td>
-                                                <td><img src="<?php echo base_url ('assets/img/gambar4.jpg') ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-md-2" style="padding:5px;">
-                                                                <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
-                                                        </div>
-                                                        <div class="col-md-2" style="padding:5px;">
-                                                            <button type="button" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>
-                                                        </div>
-                                                    </div> 
-                                                </td>
-                                            </tr>
+                                        <?php endforeach ?>
                                         </tbody>
                                 </table>
                                 <script type="text/javascript">

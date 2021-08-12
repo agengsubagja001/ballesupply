@@ -20,6 +20,7 @@ class Tambah_produk extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('admin/tambah_produk');
+		$data['barang'] = $this->model_produk->tampil_data()->result();
+		$this->load->view('admin/tambah_produk',$data);
 	}
 }
