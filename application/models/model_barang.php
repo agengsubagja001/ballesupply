@@ -43,8 +43,28 @@ class Model_barang extends CI_Model{
         return $data;
 
     }
+
+    // public function tambah_barang($data,$produk){
+	// 	$this->db->insert($produk,$data);
+	// }
+
+    // // function input produk
+    // function input_data($dataa,$table){
+	// 	$this->db->insert($table,$dataa);
+	// }
+
+    // // function hapus produk
+	// function hapus_produk($brg){
+	// 	$this->db->delete('produk','id_produk',$brg);
+		
+    // }
     
     // function HapusPegawai($id)
     // {
         // $this->db->delete('produk',array('id_produk' => $id));
+
+
+        function input_data($data,$table){
+            $this->db->insert($table, $data);
+        }
 }

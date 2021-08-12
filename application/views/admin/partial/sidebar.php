@@ -29,7 +29,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="<?php echo base_url('admin/tambah_produk') ?>" data-target="#kta" aria-expanded="true" aria-controls="collapseTwo">
             <!-- <i class="fas fa-user"></i> -->
-            <span>Tambah Produk Baru</span>
+            <span>Tambah Produk</span>
         </a>
         <div id="kta" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             
