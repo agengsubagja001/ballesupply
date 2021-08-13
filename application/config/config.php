@@ -28,6 +28,7 @@ $config['base_url'] = 'http://localhost:8000/BALE';
 /*
 |--------------------------------------------------------------------------
 | Index File
+
 |--------------------------------------------------------------------------
 |
 | Typically this will be your index.php file, unless you've renamed it to

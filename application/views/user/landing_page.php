@@ -1227,74 +1227,17 @@
     </section>
     <!-- Akhir list produk -->
     <!-- section belanja  -->
-    <section>
+    <section class="mb-5">
 		<div class="container text-center" style="max-width: 1340px;">
 		<!-- Cara Berbelanja -->
-            <div class="row">
-                <div class="col-md-12 mt-5">
-                    <h6 style="left: 53px; top: 3583px; font-family: Poppins; font-style: normal; font-weight: 600; font-size: 30px; line-height: 45px; align-items: center; text-align: center; color: #000000; text-shadow: 0px 99px 280px rgba(253, 217, 34, 0.17), 0px 41.3598px 116.977px rgba(253, 217, 34, 0.122205), 0px 22.1129px 62.5417px rgba(253, 217, 34, 0.101338), 0px 12.3963px 35.0603px rgba(253, 217, 34, 0.085), 0px 6.5836px 18.6203px rgba(253, 217, 34, 0.0686618), 0px 2.73958px 7.74832px rgba(253, 217, 34, 0.0477948);">Cara Berbelanja</h6>
-                </div>
-                    <div class="col-md-6">
-                        <img src="<?php echo base_url('assets/img/belanja1.jpg') ?>" style="left: 111px; top: 3776px; background: #C4C4C4;" class="img-fluid" alt="...">
-                    </div>
-                        <div class="col-md-6 text-lg-start" style="margin-top: 140px;">
-                            <h5 style="color:#015EB6;" class="text-left">Beginilah Cara Belanja Dengan Mudah</h5>
-                            <table>
-                                <tr style="transform:translateY(10px);">
-                                    <td>
-                                        <div style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);">1</div>
-                                    </td>
-                                    <td style="font-family: Poppins; font-style: normal; font-weight: 300; font-size: 18px; line-height: 27px; display: flex; align-items: flex-end; color: #015EB6;">Pilih produk</td>
-                                </tr>
-                                <tr style="transform:translateY(20px);">
-                                    <td>
-                                        <div style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);">2</div>
-                                    </td>
-                                    <td style="font-family: Poppins; font-style: normal; font-weight: 300; font-size: 18px; line-height: 27px; display: flex; align-items: flex-end; color: #015EB6;">Baca deskripsi</td>
-                                </tr>
-                                <tr style="transform:translateY(30px);">
-                                    <td>
-                                        <div style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);">3</div>
-                                    </td>
-                                    <td style="font-family: Poppins; font-style: normal; font-weight: 300; font-size: 18px; line-height: 27px; display: flex; align-items: flex-end; color: #015EB6;">Tentukan Jumlah QTY</td>
-                                </tr>
-
-                            </table>
-                        </div>
-                <div class="col-md-12 mt-5">
-                    <P style="left: 53px; top: 3583px; font-family: Poppins; font-style: normal; font-weight: 600; font-size: 30px; line-height: 45px; align-items: center; text-align: center; color: #000000; text-shadow: 0px 99px 280px rgba(253, 217, 34, 0.17), 0px 41.3598px 116.977px rgba(253, 217, 34, 0.122205), 0px 22.1129px 62.5417px rgba(253, 217, 34, 0.101338), 0px 12.3963px 35.0603px rgba(253, 217, 34, 0.085), 0px 6.5836px 18.6203px rgba(253, 217, 34, 0.0686618), 0px 2.73958px 7.74832px rgba(253, 217, 34, 0.0477948);">Cara Bertransaksi</p>
+			<div class="row">
+				<div class="col-md-6">
+				<img src="<?php echo base_url('assets/img/cara_belanja.jpg') ?>" style="width:600px" class="img-fluid d-flex justify-content-center" alt="...">
 				</div>
-				<!-- Beginilah Cara Bertransaksi -->
-                <div class="row flex-column-reverse flex-lg-row container">
-                    <div class="col-md-6" style="margin-top: 100px;">
-                        <h5 style="color:#015EB6; padding: 10px;" class="text-left">Beginilah Cara Bertransaksi Dengan Aman</h5>
-                        <table style="text-center"> 
-                            <tr style="transform:translateY(10px);">
-                                <td>
-                                    <div style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);">1</div>
-                                </td>
-                                <td style="font-family: Poppins; font-style: normal; font-weight: 300; font-size: 18px; line-height: 27px; display: flex; align-items: flex-end; color: #015EB6;">Tentukan lokasi penerima</td>
-                            </tr>
-                            <tr style="transform:translateY(20px);">
-                                <td>
-                                    <div style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);">2</div>
-                                </td>
-                                <td style="font-family: Poppins; font-style: normal; font-weight: 300; font-size: 18px; line-height: 27px; display: flex; align-items: flex-end; color: #015EB6;">Tentukan metode pembayaran</td>
-                            </tr>
-                            <tr style="transform:translateY(30px);">
-                                <td>
-                                    <div style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);">3</div>
-                                </td>
-                                <td style="font-family: Poppins; font-style: normal; font-weight: 300; font-size: 18px; line-height: 27px; display: flex; align-items: flex-end; color: #015EB6;">Pembeli akan menerima resi</td>
-                            </tr>
-
-                        </table>
-                    </div>
-                    <div class="col-md-6 mt-2">
-                        <img src="<?php echo base_url('assets/img/belanja2.jpg') ?>" style="left: 111px; top: 3776px; background: #C4C4C4;" class="img-fluid" alt="...">
-                    </div>
-                </div>
-            </div>
+				<div class="col-md-6">2</div>
+				<div class="col-md-6">3</div>
+				<div class="col-md-6">4</div>
+			</div>
         </div>
     </section>
 	<!-- akhir section belanja  -->
