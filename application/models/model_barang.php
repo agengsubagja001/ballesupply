@@ -52,12 +52,7 @@ class Model_barang extends CI_Model{
     // function input_data($dataa,$table){
 	// 	$this->db->insert($table,$dataa);
 	// }
-
-    // // function hapus produk
-	// function hapus_produk($brg){
-	// 	$this->db->delete('produk','id_produk',$brg);
-		
-    // }
+    
     
     // function HapusPegawai($id)
     // {
@@ -67,4 +62,26 @@ class Model_barang extends CI_Model{
         function input_data($data,$table){
             $this->db->insert($table, $data);
         }
+
+        //FUNCTION HAPUS
+        public function hapus_data($where, $table){
+
+            $this->db->where($where);
+            $this->db->delete($table);
+        }
+
+
+
+
+        // FUNCTION EDIT
+        // public function edit_barang($where,$table){
+        //     return $this->db->get_where($table,$where);
+        // }
+        
+        // // FUNCTION UPDATE
+        // public function update_data($where,$data,$table)
+        // {
+        //     $this->db->where($where);
+        //     $this->db->update($table,$data);
+        // }
 }
