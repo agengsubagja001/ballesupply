@@ -47,6 +47,15 @@
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
+			.card_produk{
+				width: 100%;
+				height: 230px;
+				background-color: #fff;
+				border-radius: 10px;
+				box-shadow: 0 5px 10px rgb(73 84 100 / 5%);
+				border-color: transparent;
+				z-index: 20px;
+			}
 		</style>
   </head>
 </html>

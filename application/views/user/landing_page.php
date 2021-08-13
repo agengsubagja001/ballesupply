@@ -1050,23 +1050,28 @@
             <!-- akhir modal -->
 			<!-- Card -->
 			<div class="row">
-					<div class="col-md-2">
-						<div class="card" style="width: 18rem;">
-							<img src="https://lh3.googleusercontent.com/proxy/cJPhceCOrIxxUMjbIiDnf6NK0OPhAP27teWky4teq5BvaoUzkTElyrZdl0Nd5ttehu6B_NgAoO_n4t4EBMjFqmtk55F8fM3KqzW4wbXGrLwM" class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<?php foreach ($query as $pdk) : ?>
+                    <div class="col-md-2 mt-2">
+                        <div class="card_produk">
+                            <div class="row">
+								<div class="col-md-12">
+									<img src="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="img-fluid" style="width:100%;height:150px;object-fit: fill;" alt="produk">
+								</div>
+								<div class="col-md-12 text-left m-2" style="position: relative;height:70px;font-family:Poppins">
+									<span style="display:flex;overflow: hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;-moz-binding: url('assets/xml/ellipsis.xml#ellipsis');font-size:12px;margin-right:20px;max-height:40px"><?php echo $pdk->nama_produk ?></span>
+									<br>
+									<h5 style="position: absolute;bottom:0;font-weight:800;font-family:Poppins;font-size:13px;color:#000">Rp.<?php echo number_format ($pdk->harga) ?></h5>
+								</div>
 							</div>
-						</div>
+                        </div>
 					</div>
-					<div class="col-md-2">
-						<div class="card" style="width: 18rem;">
-							<img src="https://lh3.googleusercontent.com/proxy/cJPhceCOrIxxUMjbIiDnf6NK0OPhAP27teWky4teq5BvaoUzkTElyrZdl0Nd5ttehu6B_NgAoO_n4t4EBMjFqmtk55F8fM3KqzW4wbXGrLwM" class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-						</div>
-					</div>
+					<!-- Akhir Colom  -->
+					<!-- Awal Modal -->
+					
+					<!-- Akhir Modal -->
+                <?php endforeach ?>
 			</div>
+			
 			<!-- Akhir Card -->
                
             </div>
