@@ -85,11 +85,16 @@
 			<!-- Section: Links  -->
 			<!-- Copyright -->
 			<div class="container" style="max-width: 1340px;">
-				<div class="text-white p-4" style="background-color:#0049A8; font-size:15px; font-style: normal; ">
+				<div class="text-white text-center p-4" style="background-color:#0049A8; font-size:15px; font-style: normal; ">
 					© 2021 Copyright:
 					<a class="text-white" href="#" style="font-weight: 600;">BALESUPPLY</a>
 				</div>
 			</div>
 			<!-- Copyright -->
+			<!-- not found -->
+			
+			</script>
 			</footer>
 	</div>
+</body>
+</html>

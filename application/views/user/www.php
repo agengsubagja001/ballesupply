@@ -862,3 +862,152 @@
     <!-- <script src="https://kit.fontawesome.com/10e0601b40.js" crossorigin="anonymous"></script> -->
   </body>
 </html>
+
+
+
+
+
+
+
+                <div class="modal fade" id="mdl_produk<?php echo $pdk->id_produk ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">       
+                                <div class="container">
+                                    <div class="row">
+                                            <div class="col-md-5 text-center">
+                                                <div id="carouselExampleControls<?php echo $pdk->id_produk ?>" class="carousel slide" data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                        <img class="d-block w-100" src="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" alt="First slide">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                        <img class="d-block w-100" src="<?php echo base_url().'assets/gambar_samping/' .$pdk->foto_samping ?>" alt="Second slide">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                        <img class="d-block w-100" src="<?php echo base_url().'assets/gambar_atas/' .$pdk->foto_atas ?>" alt="Third slide">
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" href="#carouselExampleControls<?php echo $pdk->id_produk ?>" role="button" data-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselExampleControls<?php echo $pdk->id_produk ?>" role="button" data-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </div>
+                                                <!-- <img src="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="img-fluid" alt="..."> -->
+                                            </div>
+                                        <div class="col-md-7 text-left">
+                                                <p style="left: 666px; top: 333px; font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; line-height: 52px; color: #222222;"><?php echo $pdk->nama_produk ?></p>
+                                                <b style="font-family: Poppins; font-style: normal; font-weight: 600; font-size: 45px; line-height: 75px; display: flex; align-items: center; color: #000000;">Rp.<?php echo number_format ($pdk->harga) ?> </b> 
+                                            <!-- row atribut -->
+                                            <div class="row mt-3">
+                                                <div class="col-md-5">
+                                                    <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">ukuran</P>
+                                                        <select class="form-control" name="ukuran">
+                                                            <option>Pilih ukuran</option>
+                                                            <?php foreach ($gabung as $jon) :  ?>
+                                                                <option><?php var_dump($jon->isi_varian) ?></option>
+                                                            <?php endforeach ?>
+                                                        </select> 
+                                                </div>
+                                                <div class="col-md-5" >
+                                                    <p style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">qty</p>
+                                                        <form  method="post" >
+                                                            
+                                                                    <!-- <button style="border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" class="qtyminus" aria-hidden="true">&minus;</button> -->
+                                                                        <!-- <input type="text" style="" id="nmbr" name="nmbr" value="0"/> -->
+                                                                        <!-- <span class="badge badge-pill badge-danger" id="hasill" style="">0</span><input type="text" style="display:none" id="nmbr1" value="0"/> -->
+                                                                    <!-- <button style="border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" class="qtyplus" aria-hidden="true">&plus;</button> -->
+                                                                  <!-- <button class="btn btn-warning" onclick="incrementValue()" value="plus">cek </button> -->
+                                                                                <!-- <input style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" type="button" onclick="incrementValuein()" value="-" />
+                                                                                    <span class="" id="hasi"></span><input type="text" style="display:block" id="number" value="1"/>
+                                                                                    <input type="number">
+                                                                                    <button type="button" class="tambahh" onclick="tambahdata()">tambahh</button>
+                                                                                    <button type="button" class="tambah" >tambah</button>
+                                                                                    <span class="hasil">0</span>
+                                                                                <input style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" type="button" onclick="incrementValue()" value="+" /> -->
+                                                            <select class="form-control" id="qty" name="qty[]">
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                                <option>6</option>
+                                                                <option>7</option>
+                                                                <option>8</option>
+                                                                <option>9</option>
+                                                                <option>10</option>
+                                                                <option>11</option>
+                                                                <option>12</option>
+                                                            </select>
+                                                            <input type="submit"/>
+                                                        </form>
+                                                </div>
+                                            </div>
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
+                                                            <select class="form-control" name="warna">
+                                                                <option>Pilih warna</option>
+                                                                <option><?php echo $jon->isi_varian ?></option>
+                                                            </select>
+                                                    </div> 
+                                                        <div class="col-md-5">
+                                                            <p style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Berat</p> 
+                                                            <table>
+                                                                <td>
+                                                                    <tr><p><?php echo $pdk->berat ?> Gram</p></tr>
+                                                                    <i class="fa fa-shopping-cart" style="color:white;"><span class="badge badge-pill badge-danger" id="hasil" style="transform:translateY(-10px)">0</span><input type="text" style="display:block" id="number" value="0"/></i>
+                                                                </td>
+                                                            </table>
+                                                        </div>
+                                                </div>   
+                                                </div> 
+                                                <!-- row akhir atribut -->
+                                                <div class="col-md-12 text-right">
+                                                    <div class="container">
+                                                        <button class=" btn btn-warning" type="button"  onclick="incrementValue()" id="hasil" data-target="qty" value="plus" aria-hidden="true">Tambahkan ke troli</button>
+                                                        <!-- <a href="#"  class=" btn btn-warning" type="button"  onclick="incrementValue()" id="hasil" data-target="qty" value="plus" aria-hidden="true"><i class="fa fa-shopping-cart"></i>tambahkan ke troli</a> -->
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        <div class="row container">
+                                            <div class="col-md-6 text-left mb-5">
+                                                <h5>Deskripsi</h3>
+                                                <p style="white-space: pre-wrap;"><?php echo $pdk->deskripsi ?></p>
+                                            </div>
+
+                                            <div class="col-md-5 justify-content-center">
+                                                <div class="row text-center">
+                                                    <div class="col-md-12 d-flex justify-content-center mt-2">
+                                                        <h5>Hubungi Customer Service kami</h5>
+                                                    </div>
+                                                    <div class="col-md-12 d-flex justify-content-center p-2">
+                                                        <div class="card " style="width:300px; height:344px; position:initial; border-radius: 30px; background: #FAFAFA; box-shadow: 0px -7px 80px rgba(0, 0, 0, 0.07), 0px -2.92443px 33.4221px rgba(0, 0, 0, 0.0503198), 0px -1.56354px 17.869px rgba(0, 0, 0, 0.0417275), 0px -0.876509px 10.0172px rgba(0, 0, 0, 0.035), 0px -0.465507px 5.32008px rgba(0, 0, 0, 0.0282725), 0px -0.193708px 2.21381px rgba(0, 0, 0, 0.0196802);">
+                                                            <img src="<?php echo base_url('assets/img/support 1.png') ?>" class="card-img-right" alt="...">
+                                                                <div class="card-body">
+                                                                    <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $pdk->nama_produk?>%20%0ADengan%20Jumlah : %0AVarian : <?php echo $jon->isi_varian ?>%0Aukuran : <?php echo $jon->isi_varian ?>%20%0Adengan%20harga : <?php echo $pdk->harga?>%0A">
+                                                                    <button type="button" class="btn btn-outline-warning" aria-hidden="true"><i class="fa fa-user" aria-hidden="true"></i>  Hubungi Customer Service</button></a>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>      
+                    </div>
+                </div>
