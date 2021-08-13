@@ -1063,11 +1063,11 @@
 									<h5 style="position: absolute;bottom:0;font-weight:800;font-family:Poppins;font-size:13px;color:#000">Rp.<?php echo number_format ($pdk->harga) ?></h5>
 								</div>
 							</div>
-                        </div>
+						</div>
 					</div>
 					<!-- Akhir Colom  -->
 					<!-- Awal Modal -->
-					
+
 					<!-- Akhir Modal -->
                 <?php endforeach ?>
 			</div>
