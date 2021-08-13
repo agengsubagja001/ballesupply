@@ -107,76 +107,37 @@ class Tambah_produk extends CI_Controller {
             return false;
         }
 
-        $namaFileBaru = uniqid();
-        $namaFileBaru .= '.';
-        $namaFileBaru .= $ekstensiGambar;
+        
+		
+		// Konfigurasi Foto
+		$configs ['upload_path'] = 'assets/gambar_utama';
+		$configs ['upload_path'] = 'assets/gambar_samping';
+		$configs ['allowed_types'] = 'jpg|jpeg|png|gif|jfif|WEBP';
+		$configs = uniqid();
+        $configs .= '.';
+		$configs .= $ekstensiGambar;
 
-        // Definisi Gambar
+		// Definisi Gambar
+
+		var_dump($configs);
+		
         $data = array(
 			'nama_produk' => $nama_produk,
 			'deskripsi' => $deskripsi,
 			'harga' => $harga,
 			'berat'=> $berat,
-            'foto_utama'=> $namaFileBaru,
+            'foto_utama'=> $configs,
             'foto_samping' => $foto_samping,
             'foto_atas' => $foto_atas   
 		);
+		echo "<script>console.log('berhasil tanpa') </script>";
+		$this->load->library('upload', $configs);
+		$namaFileBaru=$this->upload->data('file_name');
+
 
         
-
-        echo "<script>console ('berhasil tanpa gambar') </script>";
-
-        if ($foto_utama=''){
-            echo "<script>alert('berhasil') </script>";
-
-        }else{
-            $config ['upload_path'] = 'assets/gambar_utama';
-            $config ['allowed_types'] = 'jpg|jpeg|png|gif|jfif|WEBP';
-
-            $this->load->library('upload', $config);
-            
-            $namaFileBaru=$this->upload->data('file_name');
-
-            move_uploaded_file($upload, "$uploads_path/gambar_utama");
-            echo "<script>alert('berhasil utama') </script>";
-            
-        }
-
-        if ($foto_samping=''){
-            echo "<script>console.log('berhasil samping if') </script>";
-
-        }else{
-            $configs ['upload_path'] = 'assets/gambar_samping';
-            $configs ['allowed_types'] = 'jpg|jpeg|png|gif|jfif|WEBP';
-
-            $this->load->library('upload', $configs);
-            // $foto_samping=$this->upload->data('file_name');
-            echo "<script>console.log('berhasil samping') </script>";
-        }
-
-        if ($foto_atas=''){
-
-
-        }else{
-            $configss ['upload_path'] = 'assets/gambar_atas';
-            $configss ['allowed_types'] = 'jpg|jpeg|png|gif|jfif|WEBP';
-
-            $this->load->library('upload', $configss);
-            if(!$this->upload->do_upload('foto_atas')){
-                echo "Gambar gagal di upload";
-            }else{
-
-                 // Samping
-                move_uploaded_file($upload, "$uploads_path/gambar_atas");
-                $foto_atas=$this->upload->data('file_name');
-            }
-            // $foto_samping=$this->upload->data('file_name');
-            // echo "<script>console.log('berhasil samping') </script>";
-        }
-
-
-
 		$this->model_barang->input_data($data,'produk');
+		echo "<script>console.log('berhasil tanpa gambar') </script>";
 		redirect('admin/tambah_produk');
 	}
 
@@ -220,6 +181,7 @@ class Tambah_produk extends CI_Controller {
 
     // FUNCTION UPDATE
 	public function update(){
+		$id = $this->input->post('id_produk');
 		$nama_produk = $this->input->post('nama_produk');
 		$deskripsi = $this->input->post('deskripsi');
 		$harga = $this->input->post('harga');
@@ -229,6 +191,7 @@ class Tambah_produk extends CI_Controller {
 
         // Definisi Gambar
         $data = array(
+			'id_produk' => $id,
 			'nama_produk' => $nama_produk,
 			'deskripsi' => $deskripsi,
 			'harga' => $harga,
