@@ -39,7 +39,6 @@
                     </nav>
                     <div class="card shadow mb-4">
                         <div class="card-body">
-
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="table_id" width="100%">
                                         <thead>
@@ -49,7 +48,7 @@
                                                 <th scope="col">Nama Produk</th>
                                                 <th scope="col">Berat</th>
                                                 <th scope="col">Harga</th>
-                                                <th scope="col" colspan="3">Aksi</th>
+                                                <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -59,8 +58,8 @@
                                                 <td><?php echo $no++ ?></td>
                                                 <td><img src="<?php echo base_url(). '/assets/gambar_utama/'. $brg->foto_utama ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
                                                 <td><?php echo $brg->nama_produk ?></td>
-                                                <td><?php echo $brg->berat ?></td>
-                                                <td><?php echo $brg->harga ?></td>
+                                                <td><?php echo $brg->berat ?> gram</td>
+                                                <td>Rp.<?php echo number_format ($brg->harga) ?></td>
                                                 <td>
                                                 <div class="row">
                                                     <div class="col-md-2" style="padding:5px;">
@@ -78,9 +77,10 @@
                                                 </div>                           
                                                 </td>
                                             </tr>
-                                            <?php endforeach ?>
+                                        <?php endforeach ?>   
                                         </tbody>
                                 </table>
+                                        
                                 <script type="text/javascript">
                                     $(document).ready( function () {
                                         $('#table_id').DataTable();
@@ -124,7 +124,7 @@
                     </div>
 
 
-                    <!-- Modal Card -->
+                    <!-- Modal Card Tambah Baru -->
                     <div class="modal fade" id="tambah_baru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -156,8 +156,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Berat</label>
-                                                <input type="text" name="berat" class="form-control" required="harus di isi!">
+                                                <label>Berat (Gram)</label>
+                                                <input type="number" name="berat" class="form-control" required="harus di isi!">
                                             </div>
                                         </div>
                                     </div>
@@ -222,9 +222,9 @@
                         </div>
                     </div>
                     </div>
-                    <!-- akhir modal card -->
-                        
-                    <!-- Modal edit -->
+                    <!-- akhir modal card Tambah Baru -->
+
+                    <!-- Modal Card edit -->
                     <div class="modal fade" id="edit_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -325,32 +325,13 @@
                         </div>
                     </div>
                     </div>
-                    <!-- akhir modal edit -->
+                    <!-- Akhir modal card edit -->
 
-                    <!-- modal hapus -->
-                    <div class="modal fade" id="modal_hapus<?php echo $brg->id_produk;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                            <h3 class="modal-title" id="myModalLabel">Hapus Barang</h3>
-                        </div>
-                        <?php foreach ($item as $brg) : ?>
-                        <form class="form-horizontal" method="post" action="<?php echo base_url().'admin/tambah_produk/hapus'?>">
-                            <div class="modal-body">
-                                <p>Anda yakin mau menghapus <b><?php echo $brg->nama_produk;?></b></p>
-                            </div>
-                            <div class="modal-footer">
-                                <input type="hidden" value="<?php echo $brg->id_produk;?>">
-                                <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                                <button class="btn btn-danger">Hapus</button>
-                            </div>
-                        </form>
-                        <?php endforeach ?>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- akhir modal hapus -->
+                    <!-- FUNCTION DATA TABLE -->
+                   
+
+                    <!-- CDN JQUERY DATA TABLES -->
+                    
 
                     <!-- Bootstrap core JavaScript-->
                     
@@ -365,12 +346,6 @@
                     <!-- Custom scripts for all pages-->
                     <script src="<?= base_url() ?>template_admin/js/sb-admin-2.min.js"></script>
 
-                    <!-- function button varian -->
-                    <script>
-                        function btn_tambah_varian(){
-                            document.getElementById('tampil_var').style.display='block';
-                        }
-                    </script>
                 </div>
             </div>
         </div>

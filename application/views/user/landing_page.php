@@ -1177,6 +1177,7 @@
                                                         <div class="container">
                                                             <button class=" btn btn-warning" type="button"  onclick="incrementValue()" id="hasil" data-target="qty" value="plus" aria-hidden="true">Tambahkan ke troli</button>
                                                             <!-- <a href="#"  class=" btn btn-warning" type="button"  onclick="incrementValue()" id="hasil" data-target="qty" value="plus" aria-hidden="true"><i class="fa fa-shopping-cart"></i>tambahkan ke troli</a> -->
+                                                            <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $pdk->nama_produk ?>%20%0ADengan%20Jumlah : <?php  ?>%0AVarian : %0Aukuran : %20%0Adengan%20harga : %0A"  class=" btn btn-warning" type="submit" aria-hidden="true"><i class="fa fa-shopping-cart"></i>tambahkan ke troli</a>
                                                         </div>
                                                     </div>
                                                     </div>
