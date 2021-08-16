@@ -135,29 +135,29 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?php echo base_url(). 'admin/tambah_produk/tambah_aksi'?>" method="post" enctype="multipart/form-data">
-                                
+								
+								<form  action="<?php echo base_url('admin/tambah_produk/do_upload');?>"  method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Nama barang</label>
-                                    <input type="text" name="nama_produk" class="form-control" required="harus di isi!">
+                                    <input type="text" name="nama_produk" class="form-control" >
                                 </div>
 
                                 <div class="form-group">
                                     <label>Deskripsi</label>
-                                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control" required="harus di isi!"></textarea>
+                                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
 
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Harga</label>
-                                                <input type="number" name="harga" class="form-control" required="harus di isi!">
+                                                <input type="number" name="harga" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Berat (Gram)</label>
-                                                <input type="number" name="berat" class="form-control" required="harus di isi!">
+                                                <input type="number" name="berat" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -199,12 +199,14 @@
 
                                 <div class="form-group">
                                     <label>Gambar produk utama</label>
-                                    <input type="file" name="foto_utama" class="form-control" required="harus di isi!">
+									<input type="file" name="foto_utama" class="form-control">
+
+
                                 </div>
 
                                  <div class="form-group">
                                     <label>Gambar produk samping</label>
-                                    <input type="file" name="foto_samping" class="form-control" required="harus di isi!">
+                                    <input type="file" name="foto_sampingg" class="form-control">
                                 </div>   
                                 
                                 <div class="form-group">
@@ -217,7 +219,7 @@
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
 
-                        </form>
+								</form>
                         
                         </div>
                     </div>
