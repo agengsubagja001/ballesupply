@@ -146,7 +146,6 @@
                                     <label>Deskripsi</label>
                                     <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
-
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
