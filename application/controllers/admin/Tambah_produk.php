@@ -92,52 +92,78 @@ class Tambah_produk extends CI_Controller {
 
 
 
+	public function tester(){
+		$nama_produk = $this->input->post('nama_produk');
+		$deskripsi = $this->input->post('deskripsi');
+		$harga = $this->input->post('harga');
+		$berat = $this->input->post('berat');
+		// Samping
+		$config['upload_path']          = './assets/gambar_samping';
+		$config['allowed_types']        = 'png|jpg|gif';
+		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+		$this->upload->initialize($config);
+		$this->load->library('upload', $config);
 
+		// 	Foto
+		
+
+		for ($i =1;$i <=3 ; $i++){
+			
+			if( !empty($poto_samping=$_FILES['poto_sampingg'.$i]['name'])){
+				echo "<script>console.log('Gagal')</script>";
+			}else{
+				echo "<script>console.log('Berhasil')</script>";
+				// Samping
+				// $upload_data = $this->upload->data();
+				// $name = $upload_data['file_name'];
+				$dataa = array(
+					'nama_produk'      => $nama_produk,
+					'deskripsi'        => $deskripsi,
+				   //  'kategori'      => $kategori,
+					'harga'            => $harga,
+					'berat'            => $berat,
+					// 'foto_utama'       => $nama_utama,
+					// 'foto_samping'     => $name,
+				);
+				   // Redirect
+				   $this->model_barang->input_data($dataa, 'produk');
+				    // redirect('tambah_produk');
+				   var_dump($poto_samping);
+				echo "<script>console.log('berhasil upload akhir')</script>";
+			}
+		}
+
+	}
     public function do_upload(){
-				if (!empty($_FILES['foto_utama']['name'])) {
-					$nama_produk = $this->input->post('nama_produk');
-					$deskripsi = $this->input->post('deskripsi');
-					$harga = $this->input->post('harga');
-					$berat = $this->input->post('berat');
-					$gambar_utama = $_FILES['foto_utama']['name'];
-					$foto_samping = $_FILES['foto_sampingg']['name'];
+					// Iniliasasi
+					
+					// $gambar_utama = $_FILES['foto_utama']['name'];
+					// $foto_samping = $_FILES['foto_sampingg']['name'];
+
+					// Config Foto
+					$config['upload_path'] = './assets/foto_utama';
+					// $config['max_size'] = '2048';  //2MB max
+					// $config['max_width'] = '4480'; // pixel
+					// $config['max_height'] = '4480'; // pixel
+					$config['file_name'] = $_FILES['foto_sampingg']['name'];
+					$this->upload->initialize($config);
+					// Akhir
+				if (!empty($_FILES['foto_sampingg']['name'])) {
+							$foto = $this->upload->data($config);
+							
+							   //  'gambar_atas'   => $gambar_atas,
+							   var_dump($foto);
+							
+				   
 					// $foto_atas = $_FILES['foto_atas']['name'];
 					
-					// Config Gambar
-					$config['upload_path']          = './assets/gambar_utama/';
-					// $config['allowed_types']        = 'gif|jpg|png';
-					// $config['max_size']             = 100;
-					// $config['max_width']            = 1024;
-					// $config['max_height']           = 768;
-					$this->load->library('upload', $config);
-					$foto_samping=$this->upload->data('foto_samping');
-					var_dump($foto_samping);
 					
 					
-					echo "<script>console.log('Berhasil')</script>";
-
-					// Insert Gambar
-					$dataa = array(
-						'nama_produk'      => $nama_produk,
-						'deskripsi'        => $deskripsi,
-					   //  'kategori'      => $kategori,
-						'harga'            => $harga,
-						'berat'            => $berat,
-						'foto_utama'       => $gambar_utama,
-						'foto_samping'     => $foto_samping,
-					   //  'gambar_atas'   => $gambar_atas,
-		   
-					);
-
-					// Redirect
-					$this->model_barang->input_data($dataa, 'produk');
-					//  redirect('tambah_produk');
-					echo "<script>console.log('berhasil upload akhir')</script>";
 		   
 
 					
-				}else {
-					echo "<script>console.log('Gagal Upload bersih')</script>";
+				}else{
+					echo "<script>console.log('Gagal Masuk')</script>";
 				}
 	} 
 

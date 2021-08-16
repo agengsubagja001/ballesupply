@@ -136,7 +136,7 @@
                         </div>
                         <div class="modal-body">
 								
-								<form  action="<?php echo base_url('admin/tambah_produk/do_upload');?>"  method="post" enctype="multipart/form-data">
+								<form  action="<?php echo base_url('admin/tambah_produk/tester');?>"  method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Nama barang</label>
                                     <input type="text" name="nama_produk" class="form-control" >
@@ -204,14 +204,16 @@
                                 </div>
 
                                  <div class="form-group">
-                                    <label>Gambar produk samping</label>
-                                    <input type="file" name="foto_sampingg" class="form-control">
-                                </div>   
+								 <?php for ($i=1; $i <=3 ; $i++) :?>
+									<label>Foto Produk</label>
+                                    <input type="file" name="foto_sampingg<?php echo $i;?>" size="20" class="form-control">
+									<?php endfor;?>
+								</div>   
                                 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Gambar Produk atas</label>
                                     <input type="file" name="foto_atas" class="form-control" value="<?php echo $brg->foto_atas ?>">
-                                </div>
+                                </div> -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -299,7 +301,7 @@
                                 </div>
                                 <!-- Akhir Varian -->
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Gambar produk utama</label>
                                     <input type="file" name="foto_utama" class="form-control"  value="<?php echo $brg->foto_utama ?>">
                                 </div>
@@ -312,7 +314,7 @@
                                 <div class="form-group">
                                     <label>Gambar Produk atas</label>
                                     <input type="file" name="foto_atas" class="form-control" value="<?php echo $brg->foto_atas ?>">
-                                </div>
+                                </div> -->
                                 
                         </div>
                         <div class="modal-footer">
