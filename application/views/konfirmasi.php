@@ -1,7 +1,7 @@
-<?php $this->load->view('user/partial/head') ?>
+<?php $this->load->view('partial/head') ?>
 
     <body>
-    <?php $this->load->view('user/partial/navbar') ?>
+    <?php $this->load->view('partial/navbar') ?>
 
         <h5 class="text-center">KONFIRMASI PEMBAYARAN</h5>
 

@@ -21,6 +21,6 @@ class Konfirmasi extends CI_Controller {
 	public function index()
 	{
         $data['query'] = $this->model_barang->tampil_data()->result();
-		$this->load->view('user/konfirmasi',$data);
+		$this->load->view('konfirmasi',$data);
 	}
 }

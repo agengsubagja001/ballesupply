@@ -54,4 +54,4 @@ $route['default_controller'] = 'welcome';
 // $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin/dashboard';
-$route['user'] = 'user/landing_page';
+

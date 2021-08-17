@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Landing_page extends CI_Controller {
+class Halaman_utama extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();		
@@ -27,10 +27,10 @@ class Landing_page extends CI_Controller {
 	public function index()
 	{
 		$data['gabung']=$this->model_barang->join()->result();
-		$data['query'] = $this->model_barang->tampil_data()->result();
-		$this->load->view('user/landing_page',$data);
+		$data['card'] = $this->model_barang->tampil_data()->result();
+		$this->load->view('halaman_utama',$data);
 		// $join['query'] = $this->model_barang->join()->result();
-        // $this->load->view('user/landing_page',$join);
+        // $this->load->view('landing_page',$join);
 
 		// MENAMPILKAN DENGAN SINTAX VALUE QUERY
 		// $data['query'] = $this->model_barang->tampil_data()->result();
@@ -38,16 +38,11 @@ class Landing_page extends CI_Controller {
 	public function search(){
         $keyword = $this->input->post('keyword');
         $data['query']=$this->model_barang->get_produk_keyword($keyword);
-        $this->load->view('user/landing_page',$data);
-		
-    }
-	public function cart(){
-        $data['query']=$this->model_barang->detail($id);
-        $this->load->view('user/keranjang',$data);
+        $this->load->view('halaman_utama',$data);
 		
     }
 	public function buy(){
-         $this->load->view('user/landing_page',$data);
+         $this->load->view('halaman_utama',$data);
 		
     }
 }

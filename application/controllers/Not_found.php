@@ -21,6 +21,6 @@ class Not_found extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->view('user/not_found');
+		$this->load->view('not_found');
 	}
 }
