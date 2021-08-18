@@ -136,7 +136,7 @@
                         </div>
                         <div class="modal-body">
 								
-								<form  action="<?php echo base_url('admin/tambah_produk/tester');?>"  method="post" enctype="multipart/form-data">
+								<form  action="<?php echo base_url('admin/tambah_produk/campur');?>"  method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Nama barang</label>
                                     <input type="text" name="nama_produk" class="form-control" >
@@ -199,16 +199,19 @@
                                 <div class="form-group">
                                     <label>Gambar produk utama</label>
 									<input type="file" name="foto_utama" class="form-control">
-
-
                                 </div>
-
                                  <div class="form-group">
-								 <?php for ($i=1; $i <=3 ; $i++) :?>
 									<label>Foto Produk</label>
-                                    <input type="file" name="foto_sampingg<?php echo $i;?>" size="20" class="form-control">
-									<?php endfor;?>
-								</div>   
+                                    <input type="file" name="foto_upload" size="20" class="form-control">
+								 </div> 
+								 <div class="form-group">
+									<label>Foto Produk</label>
+                                    <input type="file" name="foto_uploaddua" size="20" class="form-control">
+								 </div> 
+								 <div class="form-group">
+									<label>Foto Produk</label>
+                                    <input type="file" name="foto_uploadtiga" size="20" class="form-control">
+								 </div> 
                                 
                                 <!-- <div class="form-group">
                                     <label>Gambar Produk atas</label>
@@ -217,7 +220,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary" name="btn_add">Simpan</button>
                         </div>
 
 								</form>

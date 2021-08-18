@@ -89,8 +89,76 @@ class Tambah_produk extends CI_Controller {
             redirect('admin/tambah_produk');
         }
 
+	// Tes Github
+	public function campur(){
+		if (isset($_POST['btn_add'])) {
+			$nama_produk = $this->input->post('nama_produk');
+			$deskripsi = $this->input->post('deskripsi');
+			$harga = $this->input->post('harga');
+			$berat = $this->input->post('berat');
+			// Foto 1
+			$foto_satu = $_FILES['foto_upload']['name'];
+			$foto_satu_tmp = $_FILES['foto_upload']['tmp_name'];
+			// Foto Kedua
+			$foto_dua = $_FILES['foto_uploaddua']['name'];
+			$foto_dua_tmp = $_FILES['foto_uploaddua']['tmp_name'];
+			// Foto Ketiga
+			$foto_tiga = $_FILES['foto_uploadtiga']['name'];
+			$foto_tiga_tmp = $_FILES['foto_uploadtiga']['tmp_name'];
+
+			 // cek ekstensi foto
+			 $ekstensiGambarValid = ['jpg','jpeg','png','webp'];
+			 $ekstensiGambar = explode('.',$foto_satu);
+			 $ekstensiGambar = strtolower(end($ekstensiGambar));
+			//  Cek Ekstensi Foto 2
+			 $ekstensiGambarValiddua = ['jpg','jpeg','png','webp'];
+			 $ekstensiGambardua = explode('.',$foto_dua);
+			 $ekstensiGambardua = strtolower(end($ekstensiGambar));
+			 if( !in_array($ekstensiGambar,$ekstensiGambarValid)){
+			 echo"<script>
+			 alert('Salah Ekstensi');
+			 </script>";
+			 return false;
+			 }
+			  // // GENERAT NAME PHOTO 1
+			  $newfotosatu = uniqid();
+			  $newfotosatu .= '.';
+			  $newfotosatu .= $ekstensiGambar;
+			  // // GENERAT NAME PHOTO 2
+			  $newfotodua = uniqid();
+			  $newfotodua .= '.';
+			  $newfotodua .= $ekstensiGambardua;
+			  // // GENERAT NAME PHOTO 1
+			  $newfototiga = uniqid();
+			  $newfototiga .= '.';
+			  $newfototiga .= $ekstensiGambar;
+
+			
+			move_uploaded_file($foto_satu_tmp,'./assets/gambar_utama/'.$foto_satu);
+			move_uploaded_file($foto_dua_tmp,'./assets/gambar_samping/'.$foto_dua);
+			move_uploaded_file($foto_tiga_tmp,'./assets/gambar_atas/'.$foto_tiga);
+			echo "<script>console.log('Berhasil')</script>";
+
+			$data = array(
+						'nama_produk' => $nama_produk,
+						'deskripsi' => $deskripsi,
+						'harga' => $harga,
+						'berat'=> $berat,
+						'foto_utama'=> $foto_satu,
+						'foto_samping' => $foto_dua,
+						'foto_atas' => $foto_tiga
+			);
+					// var_dump($newfotosatu,$newfotodua);
+					// $this->model_barang->input_data($data,'produk');
+					echo "<script>console.log('berhasil simpan gambar') </script>";
+					// redirect('admin/tambah_produk');
 
 
+		}
+
+
+	}
+	// Akhir Tes
 
 	public function tester(){
 		$nama_produk = $this->input->post('nama_produk');
@@ -99,39 +167,37 @@ class Tambah_produk extends CI_Controller {
 		$berat = $this->input->post('berat');
 		// Samping
 		$config['upload_path']          = './assets/gambar_samping';
+		$configs['upload_path']          = './assets/gambar_utama';
 		$config['allowed_types']        = 'png|jpg|gif';
 		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 		$this->upload->initialize($config);
-		$this->load->library('upload', $config);
-
-		// 	Foto
-		
-
-		for ($i =1;$i <=3 ; $i++){
+		$this->load->library('upload', $configs);
+	
+		if ($this->upload->do_upload('foto_upload')){
+			$upload_data = $this->upload->data();
+			//get the uploaded file name
+			$dataa['foto_upload'] = $upload_data['file_name'];
+			echo "<script>console.log('Berhasil')</script>";
 			
-			if( !empty($poto_samping=$_FILES['poto_sampingg'.$i]['name'])){
-				echo "<script>console.log('Gagal')</script>";
-			}else{
-				echo "<script>console.log('Berhasil')</script>";
-				// Samping
-				// $upload_data = $this->upload->data();
-				// $name = $upload_data['file_name'];
-				$dataa = array(
-					'nama_produk'      => $nama_produk,
-					'deskripsi'        => $deskripsi,
-				   //  'kategori'      => $kategori,
-					'harga'            => $harga,
-					'berat'            => $berat,
-					// 'foto_utama'       => $nama_utama,
-					// 'foto_samping'     => $name,
-				);
-				   // Redirect
-				   $this->model_barang->input_data($dataa, 'produk');
-				    // redirect('tambah_produk');
-				   var_dump($poto_samping);
-				echo "<script>console.log('berhasil upload akhir')</script>";
-			}
+			
+				var_dump($dataa);
+				// $this->model_barang->input_data($data,'produk');
+				// 	echo "<script>console.log('berhasil simpan gambar') </script>";
+					// redirect('admin/tambah_produk');
+			
+		}elseif ($this->upload->do_upload('foto_uploaddua')) {
+			$upload_datadua = $this->upload->data();
+			//get the uploaded file name
+			$datadua['foto_upload'] = $upload_datadua['file_name'];
+			echo "<script>console.log('Berhasil')</script>";
+			
+			
+				var_dump($datadua);
+		}else{
+			echo "<script>console.log('Gagal')</script>";
 		}
+		
+		
 
 	}
     public function do_upload(){
