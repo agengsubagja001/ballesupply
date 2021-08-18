@@ -31,7 +31,7 @@
 								<td> <p>Jl.kihiur 10,Cihapit,Bandung wetan</p></td>
 							</tr>
 						</table>
-						<a bhre="#" class="btn btn-warning" style="border-radius: 20px;font-weight:600">Costomer Service</a>
+						<a href="https://api.whatsapp.com/send?phone=62895354997040&text=hallo%20%0Akami%20membutuhkan%20bantuan%20dari%20kaka%20admin%20terkait%20pembelian%20dan%20sebagai%20nya" class="btn btn-warning" style="border-radius: 20px;font-weight:600">Costomer Service</a>
 					</div>
 					<!-- Grid column -->
 
@@ -67,7 +67,7 @@
 					<div class="col-md-12" >
 						<table>
 								<tr>
-									<td><img style="width: 80px;" src="<?php echo base_url('assets/img/JNE.png') ?> " style="width:10px"></td>
+									<td><img style="width: 60px;" src="<?php echo base_url('assets/img/JNE.png') ?> " style="width:10px"></td>
 									<td><img src="<?php echo base_url('assets/img/Sicepat.png') ?>" style="width:100px"></td>
 								</tr>
 						</table>

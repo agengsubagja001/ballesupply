@@ -1,5 +1,5 @@
-<?php $this->load->view('user/partial/head'); ?>
-<?php $this->load->view('user/partial/navbar'); ?>
+<?php $this->load->view('partial/head'); ?>
+<?php $this->load->view('partial/navbar'); ?>
 
 <body>
 <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>

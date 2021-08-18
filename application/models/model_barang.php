@@ -8,13 +8,6 @@ class Model_barang extends CI_Model{
         return $this->db->get('produk');
     }
 
-    // FUNCTION JOIN TABEL
-    public function join_produk(){
-        $this->db->select('tbl_user.username,tbl_user.userid,tbl_usercategory.type');
-        $this->db->from('tbl_user');
-        $this->db->join('tbl_usercategory','tbl_usercategory.usercategoryid=tbl_user.usercategoryid','inner');
-        $query=$this->db->get();
-    }
 
     //FUNCTION SEARCH
     public function get_produk_keyword($keyword){

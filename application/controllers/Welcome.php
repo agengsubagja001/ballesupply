@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('landing_page');
+		$data["card"] = $this->model_barang->tampil_data()->result();
+		$this->load->view('halaman_utama',$data);
 	}
 }

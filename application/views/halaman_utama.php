@@ -1,9 +1,9 @@
-<?php $this->load->view('user/partial/head') ?>
+<?php $this->load->view('partial/head') ?>
 
 
   <body>
       <!-- navbar -->
-      <?php $this->load->view('user/partial/navbar') ?> 
+      <?php $this->load->view('partial/navbar') ?> 
         
     <!-- Section Slide -->
     <section class=""  >
@@ -250,6 +250,8 @@
                                             <div class="col-md-6 text-left mb-5">
                                                 <h5>Deskripsi</h3>
                                                 <p style="white-space: pre-wrap;">‼️MOHON TANYA STOCK DULU YA SEBELUM ORDER‼️</p>
+                                                <p style="white-space: pre-wrap;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vitae tempora dolorem nobis! Est magnam voluptas voluptatum, vel autem facilis totam, amet rem beatae, eum ab eos accusamus hic error.</p>
+                                                <p style="white-space: pre-wrap;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vitae tempora dolorem nobis! Est magnam voluptas voluptatum, vel autem facilis totam, amet rem beatae, eum ab eos accusamus hic error.</p>
                                             </div>
 
                                             <div class="col-md-5 justify-content-center">
@@ -1038,7 +1040,7 @@
 						<a class="navbar-brand">Produk</a>
 				</div>
 				<div class="col-md-6 text-right">
-					<?php echo form_open('user/ajaxsearch/fetch') ?>
+					<?php echo form_open('ajaxsearch/fetch') ?>
 						<form class="form-inline">
 							<input class="form-control mr-sm-2" type="text" name="search_text" id="search_text" placeholder="Search" aria-label="Search" style="width: 281px; height: 50px; left: 1110px; top: 1933px; background: #FAFAFA; border: 1px solid #777777; box-sizing: border-box; border-radius: 50px;">
 								<div style="height:80px;border-radius:100%;color:blue;"></div>
@@ -1047,10 +1049,9 @@
 					<?php echo form_close() ?>
 				</div>
 			</div>  
-            <!-- akhir modal -->
 			<!-- Card -->
 			<div class="row">
-				<?php foreach ($query as $pdk) : ?>
+				<?php foreach ($card as $pdk) : ?>
                     <div class="col-6 col-md-2 mt-2">
                         <a href="#" data-toggle="modal" data-target="#mdl_produkk<?php echo $pdk->id_produk ?>">
                         <div class="card_produk">
@@ -1068,7 +1069,8 @@
                         </a>
 					</div>
 					<!-- Akhir Colom  -->
-					<!-- Awal Modal -->
+
+				<!-- Awal Modal -->
                     <div class="modal fade" id="mdl_produkk<?php echo $pdk->id_produk ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
@@ -1105,9 +1107,16 @@
                                                     </div>
                                                     <!-- <img src="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="img-fluid" alt="..."> -->
                                                 </div>
+
+                                            <!-- konfirmasi pembelian -->
                                             <div class="col-md-7 text-left">
+
+                                            <!--Form konfirmasi pembelian -->
+                                            <form action="<?php echo base_url('konfirmasi'); ?>" method="POST">
                                                     <p style="left: 666px; top: 333px; font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; line-height: 52px; color: #222222;"><?php echo $pdk->nama_produk ?></p>
-                                                    <b style="font-family: Poppins; font-style: normal; font-weight: 600; font-size: 45px; line-height: 75px; display: flex; align-items: center; color: #000000;">Rp.<?php echo number_format ($pdk->harga) ?> </b> 
+                                                    <input type="text" style="display:none" name="nama_pdk" value="<?php echo $pdk->nama_produk ?>">
+                                                    <b style="font-family: Poppins; font-style: normal; font-weight: 600; font-size: 45px; line-height: 75px; display: flex; align-items: center; color: #000000;">Rp.<?php echo number_format ($pdk->harga) ?> </b>
+                                                    <input type="text" style="display:none" name="harga" value="<?php echo $pdk->harga ?>"> 
                                                 <!-- row atribut -->
                                                 <div class="row mt-3">
                                                     <div class="col-md-5">
@@ -1119,46 +1128,33 @@
                                                                 <?php endforeach ?>
                                                             </select> 
                                                     </div>
-                                                    <div class="col-md-5" >
+                                                    <div class="col-md-5"  >
                                                         <p style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">qty</p>
-                                                            <form  method="post" >
-                                                                
-                                                                        <!-- <button style="border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" class="qtyminus" aria-hidden="true">&minus;</button> -->
-                                                                            <!-- <input type="text" style="" id="nmbr" name="nmbr" value="0"/> -->
-                                                                            <!-- <span class="badge badge-pill badge-danger" id="hasill" style="">0</span><input type="text" style="display:none" id="nmbr1" value="0"/> -->
-                                                                        <!-- <button style="border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" class="qtyplus" aria-hidden="true">&plus;</button> -->
-                                                                    <!-- <button class="btn btn-warning" onclick="incrementValue()" value="plus">cek </button> -->
-                                                                                    <!-- <input style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" type="button" onclick="incrementValuein()" value="-" />
-                                                                                        <span class="" id="hasi"></span><input type="text" style="display:block" id="number" value="1"/>
-                                                                                        <input type="number">
-                                                                                        <button type="button" class="tambahh" onclick="tambahdata()">tambahh</button>
-                                                                                        <button type="button" class="tambah" >tambah</button>
-                                                                                        <span class="hasil">0</span>
-                                                                                    <input style="color:#015EB6; border-radius:100%; width: 30px; height: 30px; left: 740px; top: 3906px; background: #FFFFFF; box-shadow: 0px 28px 80px rgba(0, 0, 0, 0.11), 0px 11.6977px 33.4221px rgba(0, 0, 0, 0.079074), 0px 6.25417px 17.869px rgba(0, 0, 0, 0.0655718), 0px 3.50603px 10.0172px rgba(0, 0, 0, 0.055), 0px 1.86203px 5.32008px rgba(0, 0, 0, 0.0444282), 0px 0.774832px 2.21381px rgba(0, 0, 0, 0.030926);" type="button" onclick="incrementValue()" value="+" /> -->
-                                                                <select class="form-control" id="qty" name="qty[]">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    <option>5</option>
-                                                                    <option>6</option>
-                                                                    <option>7</option>
-                                                                    <option>8</option>
-                                                                    <option>9</option>
-                                                                    <option>10</option>
-                                                                    <option>11</option>
-                                                                    <option>12</option>
+                                                            
+                                                                <select class="form-control" name="cek">
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="10">10</option>
+                                                                    <option value="11">11</option>
+                                                                    <option value="12">12</option>
                                                                 </select>
-                                                                <input type="submit"/>
-                                                            </form>
+                                                              
                                                     </div>
+                                                    
                                                 </div>
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
                                                                 <select class="form-control" name="warna">
                                                                     <option>Pilih warna</option>
-                                                                    <option><?php echo $jon->isi_varian ?></option>
+                                                                    <option></option>
                                                                 </select>
                                                         </div> 
                                                             <div class="col-md-5">
@@ -1166,7 +1162,6 @@
                                                                 <table>
                                                                     <td>
                                                                         <tr><p><?php echo $pdk->berat ?> Gram</p></tr>
-                                                                        <i class="fa fa-shopping-cart" style="color:white;"><span class="badge badge-pill badge-danger" id="hasil" style="transform:translateY(-10px)">0</span><input type="text" style="display:block" id="number" value="0"/></i>
                                                                     </td>
                                                                 </table>
                                                             </div>
@@ -1175,9 +1170,11 @@
                                                     <!-- row akhir atribut -->
                                                     <div class="col-md-12 text-right">
                                                         <div class="container">
-                                                            <button class=" btn btn-warning" type="button"  onclick="incrementValue()" id="hasil" data-target="qty" value="plus" aria-hidden="true">Tambahkan ke troli</button>
-                                                            <!-- <a href="#"  class=" btn btn-warning" type="button"  onclick="incrementValue()" id="hasil" data-target="qty" value="plus" aria-hidden="true"><i class="fa fa-shopping-cart"></i>tambahkan ke troli</a> -->
-                                                            <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $pdk->nama_produk ?>%20%0ADengan%20Jumlah : <?php  ?>%0AVarian : %0Aukuran : %20%0Adengan%20harga : %0A"  class=" btn btn-warning" type="submit" aria-hidden="true"><i class="fa fa-shopping-cart"></i>tambahkan ke troli</a>
+                                                            <!-- Button beli sekarang -->
+                                                            <button class=" btn btn-warning" name ="test" type="submit" aria-hidden="true">Beli Sekarang</button>
+                                                </form>
+                                                <!--Form konfirmasi pembelian -->
+
                                                         </div>
                                                     </div>
                                                     </div>
@@ -1198,7 +1195,8 @@
                                                                 <img src="<?php echo base_url('assets/img/support 1.png') ?>" class="card-img-right" alt="...">
                                                                     <div class="card-body">
                                                                         <!-- <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $pdk->nama_produk?>%20%0ADengan%20Jumlah : %0AVarian : <?php echo $jon->isi_varian ?>%0Aukuran : <?php echo $jon->isi_varian ?>%20%0Adengan%20harga : <?php echo $pdk->harga?>%0A"></a> -->
-                                                                        <button type="button" class="btn btn-outline-warning" aria-hidden="true"><i class="fa fa-user" aria-hidden="true"></i>  Hubungi Customer Service</button>
+
+                                                                        <a href="https://api.whatsapp.com/send?phone=62895354997040&text=hallo%20%0Akami%20membutuhkan%20bantuan%20dari%20kaka%20admin%20terkait%20pembelian%20dan%20sebagai%20nya"><button type="button" class="btn btn-outline-warning" aria-hidden="true"><i class="fa fa-user" aria-hidden="true"></i>  Hubungi Customer Service</button></a>
                                                                     </div>
                                                             </div>
                                                         </div>
@@ -1213,7 +1211,7 @@
                             <?php endforeach ?>      
                         </div>
                     </div>
-					<!-- Akhir Modal -->
+				<!-- Akhir Modal -->
                 
 			</div>
 			
@@ -1319,112 +1317,14 @@
 	<!-- Akhir Paralax -->
     
     <!-- footer  -->
-    <?php $this->load->view('user/partial/footer') ?>
+    <?php $this->load->view('partial/footer') ?>
     
-    <!-- JS cart -->
-    <script>
-        function incrementValue()
-        {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById('number').value = value;
-
-        var nilai_form=document.getElementById("number").value;
-        document.getElementById("hasil").innerHTML=nilai_form;
-        }
-        function incrementValuein()
-        {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value--;
-        document.getElementById('number').value = value;
-
-        var nilai_form=document.getElementById("number").value;
-        document.getElementById("hasil").innerHTML=nilai_form;
-        }
-    </script>
-
-    <!-- JS cart -->
-    
-
-
-    <!-- JS QTY -->
-    <script>
-        var input = document.querySelector("#qty");
-            var btnminus = document.querySelector(".qtyminus");
-            var btnplus = document.querySelector(".qtyplus");
-
-            if (
-            input !== undefined &&
-            btnminus !== undefined &&
-            btnplus !== undefined &&
-            input !== null &&
-            btnminus !== null &&
-            btnplus !== null
-            ) {
-            var min = Number(input.getAttribute("min"));
-            var max = Number(input.getAttribute("max"));
-            var step = Number(input.getAttribute("step"));
-
-            function qtyminus(e) {
-                var current = Number(input.value);
-                var newval = current - step;
-                if (newval < min) {
-                newval = min;
-                } else if (newval > max) {
-                newval = max;
-                }
-                input.value = Number(newval);
-                e.preventDefault();
-            }
-
-            function qtyplus(e) {
-                var current = Number(input.value);
-                var newval = current + step;
-                if (newval > max) newval = max;
-                input.value = Number(newval);
-                e.preventDefault();
-            }
-
-            btnminus.addEventListener("click", qtyminus);
-            btnplus.addEventListener("click", qtyplus);
-            } // End if test
-
-    </script>
-
-    <!-- SCRIPT AJAX -->
     
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-
-        <!-- coba js -->
-        <script>
-            function tambahdata(){
-                var tambah = document.querySelector(".tambah");
-                var kurang = document.querySelector(".kurang");
-                var hasil = document.querySelector(".hasil");
-                var no = 1;
-                tambah.onclick = function(){
-                hasil.innerHTML = no++;
-                }
-                kurang.onclick = function(){
-                hasil.innerHTML = no–;
-                }
-            }
-
-        </script>
-
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    -->
-    <!-- font awesome v5 -->
-    <!-- <script src="https://kit.fontawesome.com/10e0601b40.js" crossorigin="anonymous"></script> -->
+    
   </body>
 
