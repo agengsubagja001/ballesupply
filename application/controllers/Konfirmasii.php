@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Not_found extends CI_Controller {
+class Konfirmasii extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,7 +20,7 @@ class Not_found extends CI_Controller {
 	 */
 	public function index()
 	{
-		
-		$this->load->view('not_found');
+        $data['query'] = $this->model_barang->tampil_data()->result();
+		$this->load->view('konfirmasii',$data);
 	}
 }

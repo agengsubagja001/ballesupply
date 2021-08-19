@@ -17,6 +17,9 @@
     <link href="<?= base_url() ?>template_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+    <!-- icon gambar -->
+	<link rel="shortcut icon" href="<?php echo base_url('favicon.ico'); ?>"  sizes="16x16" />
+
     <!-- CSS JS, CDN DATATABLES -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css"> 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>

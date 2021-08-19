@@ -14,6 +14,7 @@ class Model_barang extends CI_Model{
         $this->db->select('*');
         $this->db->from('produk');
         $this->db->like('nama_produk',$keyword);
+        $this->db->or_like('harga',$keyword);
         return $this->db->get()->result();
     }
 

@@ -2,16 +2,24 @@
 <html lang="en">
   <head>
       <!-- navbar -->
-        
+
+	<!-- lazy load -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.7/jquery.lazyload.js"></script>
+
+    <!-- icon gambar -->
+	<link rel="shortcut icon" href="favicon.ico"  sizes="16x16" />
     
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- boosnip -->
-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- AOS gambar -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<!-- lazy load -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.7/jquery.lazyload.js"></script> -->
     
     <!-- AJAX SEARCH -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
@@ -283,5 +291,21 @@
 				hr
 				{ margin: 0px; padding: 0px; border-top: 1px dashed #999; }
 			/*--------------------------------------------FrameWork------------------------*/
+
+			/* 'Scroll gambar */
+			/* * {
+				box-sizing: border-box;
+				}
+
+				.item {
+				width: 200px;
+				height: 200px;
+				margin: 50px auto;
+				padding-top: 75px;
+				background: rgba(255,85,0, .7);
+				text-align: center;
+				color: #4E4C48;
+				font-size: 1.5em;
+				} */
 		</style>
 </head>
