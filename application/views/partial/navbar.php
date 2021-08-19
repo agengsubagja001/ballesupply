@@ -10,7 +10,7 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" style="color:#fff" href="<?php echo base_url('not_found'); ?>">Blog</a>
+						<a class="nav-link" style="color:#fff" href="<?php echo base_url('blog'); ?>">Blog</a>
 					</li>
 				</ul>
 			</div>

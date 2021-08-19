@@ -43,15 +43,15 @@
 					</h6>
 						<table>
 							<tr>
-								<td><img src=<?php echo base_url('assets/img/tokopedia.png') ?> style="width:20px"></td>
+								<td><img src=<?php echo base_url('assets/img/tokopedia.png') ?>  style="width:20px"></td>
 								<td><a href="https://www.tokopedia.com/balesupply" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Tokopedia</a></td>
 							</tr>
 							<tr>
-								<td><img src=<?php echo base_url('assets/img/shoppe.png')?> style="width:20px"></td>
+								<td><img src=<?php echo base_url('assets/img/shoppe.png')?>  style="width:20px"></td>
 								<td><a href="https://shopee.co.id/balesocks" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Shoppe</a></td>
 							</tr>  
 							<tr>
-								<td><img src=<?php echo base_url('assets/img/lazada.png') ?> style="width:20px"></td>
+								<td><img src=<?php echo base_url('assets/img/lazada.png') ?>  style="width:20px"></td>
 								<td><a href="https://www.lazada.co.id/" style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 18px; line-height: 27px; display: flex; align-items: center; color: #FFFFFF;">Lazada</a></td>
 							</tr>                            
 						</table>
@@ -67,8 +67,8 @@
 					<div class="col-md-12" >
 						<table>
 								<tr>
-									<td><img style="width: 60px;" src="<?php echo base_url('assets/img/JNE.png') ?> " style="width:10px"></td>
-									<td><img src="<?php echo base_url('assets/img/Sicepat.png') ?>" style="width:100px"></td>
+									<td><img style="width: 60px;" src="<?php echo base_url('assets/img/JNE.png') ?> "  style="width:10px"></td>
+									<td><img src="<?php echo base_url('assets/img/Sicepat.png') ?>"  style="width:100px"></td>
 								</tr>
 						</table>
 					<!-- <img src="assets/img/img_jne.png" alt="">   -->
@@ -92,6 +92,13 @@
 			</div>
 			<!-- Copyright -->
 			<!-- not found -->
+
+			<!-- AOS js scroll gambar -->
+			<script>   
+				AOS.init();
+			</script>
+			<!-- Akhir AOS js scroll gambar -->
+
 			
 			</script>
 			</footer>

@@ -29,6 +29,7 @@ class Halaman_utama extends CI_Controller {
 		$data['gabung']=$this->model_barang->join()->result();
 		$data['card'] = $this->model_barang->tampil_data()->result();
 		$this->load->view('halaman_utama',$data);
+		
 		// $join['query'] = $this->model_barang->join()->result();
         // $this->load->view('landing_page',$join);
 

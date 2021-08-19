@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Konfirmasii extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,8 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data["card"] = $this->model_barang->tampil_data()->result();
-		$data["gabung"] = $this->model_barang->tampil_data()->result();
-		$this->load->view('halaman_utama',$data);
+        $data['query'] = $this->model_barang->tampil_data()->result();
+		$this->load->view('konfirmasii',$data);
 	}
 }
