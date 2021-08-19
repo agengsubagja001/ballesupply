@@ -110,33 +110,29 @@ class Tambah_produk extends CI_Controller {
 			 $ekstensiGambarValid = ['jpg','jpeg','png','webp'];
 			 $ekstensiGambar = explode('.',$foto_satu);
 			 $ekstensiGambar = strtolower(end($ekstensiGambar));
-			//  Cek Ekstensi Foto 2
-			 $ekstensiGambarValiddua = ['jpg','jpeg','png','webp'];
-			 $ekstensiGambardua = explode('.',$foto_dua);
-			 $ekstensiGambardua = strtolower(end($ekstensiGambar));
+			
 			 if( !in_array($ekstensiGambar,$ekstensiGambarValid)){
 			 echo"<script>
 			 alert('Salah Ekstensi');
 			 </script>";
 			 return false;
 			 }
-			  // // GENERAT NAME PHOTO 1
-			  $newfotosatu = uniqid();
-			  $newfotosatu .= '.';
-			  $newfotosatu .= $ekstensiGambar;
-			  // // GENERAT NAME PHOTO 2
-			  $newfotodua = uniqid();
-			  $newfotodua .= '.';
-			  $newfotodua .= $ekstensiGambardua;
-			  // // GENERAT NAME PHOTO 1
-			  $newfototiga = uniqid();
-			  $newfototiga .= '.';
-			  $newfototiga .= $ekstensiGambar;
-
+			  // // GENERAT NAME PHOTO 1\
+			  $encrypted = base64_encode($foto_satu);
+			  $encrypted .= '.';
+			  $encrypted .= $ekstensiGambar;
+			  // // GENERAT NAME PHOTO 1\
+			  $encrypteddua = base64_encode($foto_dua);
+			  $encrypteddua .= '.';
+			  $encrypteddua .= $ekstensiGambar;
+			  // // GENERAT NAME PHOTO 1\
+			  $encryptetiga = base64_encode($foto_tiga);
+			  $encryptetiga .= '.';
+			  $encryptetiga .= $ekstensiGambar;
 			
-			move_uploaded_file($foto_satu_tmp,'./assets/gambar_utama/'.$foto_satu);
-			move_uploaded_file($foto_dua_tmp,'./assets/gambar_samping/'.$foto_dua);
-			move_uploaded_file($foto_tiga_tmp,'./assets/gambar_atas/'.$foto_tiga);
+			move_uploaded_file($foto_satu_tmp,'./assets/gambar_utama/'.$encrypted);
+			move_uploaded_file($foto_dua_tmp,'./assets/gambar_samping/'.$encrypteddua);
+			move_uploaded_file($foto_tiga_tmp,'./assets/gambar_atas/'.$encryptetiga);
 			echo "<script>console.log('Berhasil')</script>";
 
 			$data = array(
@@ -144,12 +140,12 @@ class Tambah_produk extends CI_Controller {
 						'deskripsi' => $deskripsi,
 						'harga' => $harga,
 						'berat'=> $berat,
-						'foto_utama'=> $foto_satu,
-						'foto_samping' => $foto_dua,
-						'foto_atas' => $foto_tiga
+						'foto_utama'=> $encrypted,
+						'foto_samping' => $encrypteddua,
+						'foto_atas' => $encryptetiga
 			);
-					// var_dump($newfotosatu,$newfotodua);
-					// $this->model_barang->input_data($data,'produk');
+					var_dump($encrypted,$encrypteddua);
+					$this->model_barang->input_data($data,'produk');
 					echo "<script>console.log('berhasil simpan gambar') </script>";
 					// redirect('admin/tambah_produk');
 
