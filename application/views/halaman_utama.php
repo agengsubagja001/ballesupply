@@ -1126,9 +1126,9 @@
                                                         <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">ukuran</P>
                                                             <select class="form-control" name="ukuran">
                                                                 <option>Pilih ukuran</option>
-                                                                <?php foreach ($gabung as $jon) :  ?>
-                                                                    <option><?php echo $jon->isi_varian ?></option>
-                                                                <?php endforeach ?>
+																<option value="S">S</option>
+																<option value="M">M</option>
+																<option value="L">L</option>
                                                             </select> 
                                                     </div>
                                                     <div class="col-md-5"  >
@@ -1157,7 +1157,8 @@
                                                             <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
                                                                 <select class="form-control" name="warna">
                                                                     <option>Pilih warna</option>
-                                                                    <option><?php echo $jon->isi_varian ?></option>
+																	<option value="Maroon">Maroon</option>
+																	<option value="Hitam">Hitam</option>
                                                                 </select>
                                                         </div> 
                                                             <div class="col-md-5">
