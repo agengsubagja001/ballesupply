@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +32,6 @@
 	<!-- Raleway -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
-=======
 <!DOCTYPE html>
 <html lang="en">
 

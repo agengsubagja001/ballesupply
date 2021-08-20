@@ -84,7 +84,7 @@
 													<td><span style="font-family:poppins;font-size:30px;font-weight:bold">24</span></td>
 												</tr>
 												<tr>
-													<td><span style="font-family: Poppins;font-size: 15px;font-weight: 600;">Produk</span></td>
+													<td><span style="font-family: Poppins;font-size: 15px;font-weight: 600;">Blog</span></td>
 												</tr>
 											</table>
 										</div>
