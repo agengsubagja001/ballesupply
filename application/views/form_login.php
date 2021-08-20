@@ -1,7 +1,7 @@
 <?php $this->load->view('partial/head'); ?>
 
 
-<body style="background: linear-gradient(to bottom, #00ffff 33%, #cc99ff 100%);">
+<body style="">
 
   <div class="container">
     
@@ -10,7 +10,7 @@
 
       <div class="col-xl-5 col-lg-12 col-md-9">
 
-        <div class="card o-hidden border-0 shawdow-lg my-5">
+        <div class="card border-2 shawdow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
