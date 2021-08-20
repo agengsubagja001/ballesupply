@@ -180,8 +180,13 @@
                                                     <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">ukuran</P>
                                                         <select class="form-control" name="ukuran">
                                                             <option>Pilih ukuran</option>
-                                                            
-                                                                <option>-</option>
+                                                                <option value="31">31</option>
+                                                                <option value="32">32</option>
+                                                                <option value="33">33</option>
+                                                                <option value="34">34</option>
+                                                                <option value="35">35</option>
+                                                                <option value="36">36</option>
+                                                                <option value="37">37</option>
                                                             
                                                         </select> 
                                                 </div>
@@ -1022,7 +1027,7 @@
     <!-- akhir modal 6 -->     
     <!--section pembatas  -->
     <section> 
-        <div class="container" style="max-width: 1340px;" data-aos="fade-up">
+        <div class="container" style="max-width: 1340px;">
 			<img src="<?php echo base_url('assets/img/banner.jpg') ?>" class="img-fluid"  height="230px" width="100%" style="object-fit: cover;" loading="lazy" alt="">
         </div>    
     </section>
@@ -1053,7 +1058,7 @@
                         <div class="card_produk">
                             <div class="row">
 								<div class="col-md-12">
-									<img src="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="img-fluid"  style="width:100%;height:150px;object-fit: contain;" alt="produk">
+									<img data-original="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="lazy img-fluid"  style="width:100%;height:150px;object-fit: contain;" alt="produk">
 								</div>
 								<div class="col-md-12 text-left m-2" style="position: relative;height:70px;font-family:Poppins">
 									<span style="color: #222222; display:flex;overflow: hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;-moz-binding: url('assets/xml/ellipsis.xml#ellipsis');font-size:12px;margin-right:20px;max-height:40px"><?php echo $pdk->nama_produk ?></span>
@@ -1121,7 +1126,7 @@
                                                             <select class="form-control" name="ukuran">
                                                                 <option>Pilih ukuran</option>
                                                                 <?php foreach ($gabung as $jon) :  ?>
-                                                                    <option><?php var_dump($jon->isi_varian) ?></option>
+                                                                    <option><?php echo $jon->isi_varian ?></option>
                                                                 <?php endforeach ?>
                                                             </select> 
                                                     </div>
@@ -1151,7 +1156,7 @@
                                                             <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
                                                                 <select class="form-control" name="warna">
                                                                     <option>Pilih warna</option>
-                                                                    <option></option>
+                                                                    <option><?php echo $jon->isi_varian ?></option>
                                                                 </select>
                                                         </div> 
                                                             <div class="col-md-5">
@@ -1315,14 +1320,14 @@
 	<!-- Akhir Paralax -->
 
     <!-- Lazy -->
-    <script type="text/javascript" charset="utf-8">
+    <!-- <script type="text/javascript" charset="utf-8">
         $(function() {
             $("img.lazy").lazyload({
                 effect : "fadeIn"
             });
 
         });
-    </script>
+    </script> -->
 
     <!-- script live search -->
     <script src="<?php echo base_url('assets/js/script.js'); ?>"></script>

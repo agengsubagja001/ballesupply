@@ -22,6 +22,7 @@ class Welcome extends CI_Controller {
 	{
 		$data["card"] = $this->model_barang->tampil_data()->result();
 		$data["gabung"] = $this->model_barang->tampil_data()->result();
+		$data["gabung"] = $this->model_barang->join()->result();
 		$this->load->view('halaman_utama',$data);
 	}
 }

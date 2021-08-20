@@ -5,7 +5,7 @@
     <!-- deklarasi variabel -->
         <?php $this->load->view('partial/navbar') ?>
 
-        <h5 class="text-center">CHECKOUT BARANG</h5>
+        <h5 class="text-center"><b>CHECKOUT BARANG</b></h5>
 
         <?php if(isset($_POST['test'])){
                 $nama_produk=$_POST['nama_pdk'];
@@ -14,6 +14,7 @@
                 $harga=$_POST['harga'];
                 $jumlah=$harga*$kuantyty;
                 $warna=$_POST['warna'];
+                $ukuran=$_POST['ukuran'];
 
                         
                 
@@ -36,6 +37,7 @@
                     <th scope="col">Harga</th>
                     <th scope="col">QTY</th>
                     <th style="text-align: -webkit-auto;" scope="col">Jumlah Harga</th>
+                    <th scope="col">Ukuran</th>
                     <th scope="col">warna</th>
               </tr>
             </thead>
@@ -46,6 +48,7 @@
                     <td><?php echo number_format($harga);?></td>
                     <td><?php echo $kuantyty;?></td>
                     <td><b><?php echo number_format($jumlah);?></b></td>
+                    <td><?php echo $ukuran; ?></td>
                     <td><?php echo $warna; ?></td>
                 </tr>
                 <tr>
@@ -59,7 +62,7 @@
             <span> Harga Total:  <b><?php echo number_format($jumlah);?></b></span>
         </div>
        <div class="col-md-12 text-right mt-2">
-            <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $nama_produk ?> %20%0ABerat%20Produk : <?php echo $berat ?> Gram %20%0ADengan%20Jumlah : <?php echo $kuantyty ?> qty %0AVarian : %0Aukuran : <?php  ?> %20%0Adengan%20harga :Rp. <?php echo number_format($jumlah) ?> %0A"  class=" btn btn-warning" name ="submit" type="submit" aria-hidden="true"></i>Bayar Sekarang</a>
+            <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $nama_produk ?> %20%0ABerat%20Produk : <?php echo $berat ?> Gram %20%0ADengan%20Jumlah : <?php echo $kuantyty ?> qty %0AVarian :<?php echo $warna ?> %0Aukuran : <?php echo $ukuran ?> %20%0Adengan%20harga :Rp. <?php echo number_format($jumlah) ?> %0A"  class=" btn btn-warning" name ="submit" type="submit" aria-hidden="true"></i>Bayar Sekarang</a>
        </div>
        <div class="col-md-12 text-right mt-2">
        <p class="font-italic" style="color:#FC185A;">Ini Belum Termasuk Ongkir</p>
@@ -67,7 +70,7 @@
     </div>
         
 </div>
-<?php $this->load->view('partial/footer') ?>  
+
 </body>
 
     

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +33,8 @@
 	<!-- Raleway -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
+=======
+>>>>>>> bcfca05c99f964cd71e9dd4d48e8342d172df461
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,4 +66,4 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 </head>
->>>>>>> 121d31070ab3d31a624be3c023062aae1392bd07
+
