@@ -96,6 +96,12 @@ class Tambah_produk extends CI_Controller {
 			$deskripsi = $this->input->post('deskripsi');
 			$harga = $this->input->post('harga');
 			$berat = $this->input->post('berat');
+			// Varian
+			$id_varian = $this->input->post('id_varian');
+			$id_produk = $this->input->post('id_produk');
+			$nama_varian = $this->input->post('nama_varian');
+			$isi_varian =$this->input->post('isi_varian');
+			
 			// Foto 1
 			$foto_satu = $_FILES['foto_upload']['name'];
 			$foto_satu_tmp = $_FILES['foto_upload']['tmp_name'];
@@ -129,6 +135,8 @@ class Tambah_produk extends CI_Controller {
 			  $encryptetiga = base64_encode($foto_tiga);
 			  $encryptetiga .= '.';
 			  $encryptetiga .= $ekstensiGambar;
+			  $HARGA_PRDUKDSATU = "33.000";
+			  echo $HARGA_PRDUKDSATU;
 			
 			move_uploaded_file($foto_satu_tmp,'./assets/gambar_utama/'.$encrypted);
 			move_uploaded_file($foto_dua_tmp,'./assets/gambar_samping/'.$encrypteddua);
@@ -144,8 +152,17 @@ class Tambah_produk extends CI_Controller {
 						'foto_samping' => $encrypteddua,
 						'foto_atas' => $encryptetiga
 			);
-					var_dump($encrypted,$encrypteddua);
+			// Array Varian
+			$data_varian = array(
+				'id_varian' => $id_varian,
+				'nama_varian' => $nama_varian,
+				'isi_varian'  => $isi_varian,
+				'id_produk' => $id_produk,
+			);
+					
 					$this->model_barang->input_data($data,'produk');
+					// Insert Varian
+					$this->model_barang->input_data($data_varian,'varian');
 					echo "<script>console.log('berhasil simpan gambar') </script>";
 					// redirect('admin/tambah_produk');
 

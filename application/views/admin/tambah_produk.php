@@ -137,8 +137,45 @@
                         <div class="modal-body">
 								
 								<form  action="<?php echo base_url('admin/tambah_produk/campur');?>"  method="post" enctype="multipart/form-data">
+								<!-- String ID PRODUK-->
+								<?php
+										function varian($length = 7, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
+										{
+											if($length > 0)
+											{
+												$len_chars = (strlen($chars) - 1);
+												$the_chars = $chars{rand(0, $len_chars)};
+												for ($i = 1; $i < $length; $i = strlen($the_chars))
+												{
+													$r = $chars{rand(0, $len_chars)};
+													if ($r != $the_chars{$i - 1}) $the_chars .=  $r;
+												}
+
+												return $the_chars;
+											}
+										}
+										function produk($length = 8, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
+										{
+											if($length > 0)
+											{
+												$len_chars = (strlen($chars) - 1);
+												$the_chars = $chars{rand(0, $len_chars)};
+												for ($i = 1; $i < $length; $i = strlen($the_chars))
+												{
+													$r = $chars{rand(0, $len_chars)};
+													if ($r != $the_chars{$i - 1}) $the_chars .=  $r;
+												}
+
+												return $the_chars;
+											}
+										}
+
+								?>
+								<!-- Akhir  STRING ID PRODUK -->
                                 <div class="form-group">
-                                    <label>Nama barang</label>
+									<label>Nama barang</label>
+									<input type="hidden" name="id_varian" value="<?php echo varian()?>">
+									<input type="hidden" name="id_produk" value="<?php echo produk()?>">
                                     <input type="text" name="nama_produk" class="form-control" >
                                 </div>
 
@@ -170,7 +207,7 @@
                                 </div>
                                 <div class="form-group" style="display:block" id="tampil_var">
                                     <label for="">Varian</label>
-                                    <select name="" class="form-control" id="">
+                                    <select name="nama_varian" class="form-control" id="">
                                         <option >Pilih Varian</option>
                                         <option value="Warna" >Warna</option>
                                         <option value="Ukuran">Ukuran</option>
@@ -179,28 +216,15 @@
                                 <!-- Ukuran -->
                                 <div class="form-group" style="display:block">
                                     <label for="Ukuran">Ukuran</label>
-                                    <select name="" class="form-control" id="">
-                                        <option value="">Pilih Ukuran</option>
-                                        <option value="31">31</option>
-                                        <option value="32">32</option>
-                                    </select>
+                                    <textarea name="isi_varian" id="" cols="5" class="form-control" rows="5" placeholder="30,33,S,M,L,XL"></textarea>
                                 </div>
                                 <!-- Warna -->
                                 <div class="form-group" style="display:block">
                                     <label for="Warna">Warna</label>
-                                    <select name="" class="form-control" id="">
-                                        <option>Pilih Warna</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Hitam"></option>
-                                    </select>
+									<textarea name="" id="" cols="5" class="form-control" placeholder="maroon,hitam,hijau" rows="5"></textarea>
                                 </div>
-                                <!-- Akhir Varian -->
-
-                                <div class="form-group">
-                                    <label>Gambar produk utama</label>
-									<input type="file" name="foto_utama" class="form-control">
-                                </div>
-                                 <div class="form-group">
+								<!-- Foto -->
+								<div class="form-group">
 									<label>Foto Produk</label>
                                     <input type="file" name="foto_upload" size="20" class="form-control">
 								 </div> 
@@ -212,11 +236,7 @@
 									<label>Foto Produk</label>
                                     <input type="file" name="foto_uploadtiga" size="20" class="form-control">
 								 </div> 
-                                
-                                <!-- <div class="form-group">
-                                    <label>Gambar Produk atas</label>
-                                    <input type="file" name="foto_atas" class="form-control" value="<?php echo $brg->foto_atas ?>">
-                                </div> -->
+								<!-- Akhir Foto -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

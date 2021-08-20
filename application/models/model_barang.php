@@ -55,6 +55,9 @@ class Model_barang extends CI_Model{
 
         function input_data($data,$table){
             $this->db->insert($table, $data);
+		}
+		function input_data_varian($data_varian,$table){
+            $this->db->insert($table, $data_varian);
         }
 
         //FUNCTION HAPUS
