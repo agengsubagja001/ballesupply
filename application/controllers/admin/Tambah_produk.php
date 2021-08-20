@@ -4,10 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 class Tambah_produk extends CI_Controller {
+	
 	public function __construct()
         {
                 parent::__construct();
                 $this->load->helper(array('form', 'url'));
+				if ($this->session->userdata('status') != "login") {
+					redirect(base_url('auth'));
+				}
         }
 
 	public function index()
