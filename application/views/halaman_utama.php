@@ -163,7 +163,7 @@
                                                         <span class="sr-only">Next</span>
                                                     </a>
                                                 </div>
-                                                <!-- <img src="<?php echo base_url().'assets/gambar_utama/' ?>" class="img-fluid" alt="..."> -->
+                                               
                                             </div>
 
                                            
@@ -173,7 +173,7 @@
                                                 <p style="left: 666px; top: 333px; font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; line-height: 52px; color: #222222;">Bergo Khalisa / Bergo Maryam /Bergo Lasercut - Navy</p>
                                                 <input type="text" style="display:none" name="nama_pdk" value="Bergo Khalisa / Bergo Maryam /Bergo Lasercut - Navy">
                                                 <b style="font-family: Poppins; font-style: normal; font-weight: 600; font-size: 45px; line-height: 75px; display: flex; align-items: center; color: #000000;">Rp.33.000 </b>
-                                                <input type="text" style="display:none" name="harga" value="33.000"> 
+                                                <input type="text" style="display:none" name="harga" value="33000" > 
                                             <!-- row atribut -->
                                             <div class="row mt-3">
                                                 <div class="col-md-5">
@@ -1052,13 +1052,14 @@
 			</div>  
 			<!-- Card -->
 			<div class="row" id="container">
-				<?php foreach ($card as $pdk) : ?>
+				<?php $no = $this->uri->segment('3') + 1;
+                 foreach ($card as $pdk) : ?>
                     <div class="col-6 col-md-2 mt-2">
                         <a href="#" data-toggle="modal" data-target="#mdl_produkk<?php echo $pdk->id_produk ?>">
                         <div class="card_produk">
                             <div class="row">
 								<div class="col-md-12">
-									<img data-original="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="lazy img-fluid"  style="width:100%;height:150px;object-fit: contain;" alt="produk">
+									<img src="<?php echo base_url().'assets/gambar_utama/' .$pdk->foto_utama ?>" class="img-fluid"  style="width:100%;height:150px;object-fit: contain;" alt="Produk">
 								</div>
 								<div class="col-md-12 text-left m-2" style="position: relative;height:70px;font-family:Poppins">
 									<span style="color: #222222; display:flex;overflow: hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;-moz-binding: url('assets/xml/ellipsis.xml#ellipsis');font-size:12px;margin-right:20px;max-height:40px"><?php echo $pdk->nama_produk ?></span>
@@ -1071,7 +1072,7 @@
 					</div>
 					<!-- Akhir Colom  -->
 
-				<!-- Awal Modal -->
+				    <!-- Awal Modal -->
                     <div class="modal fade" id="mdl_produkk<?php echo $pdk->id_produk ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
@@ -1213,11 +1214,32 @@
                             </div>
                             <?php endforeach ?>      
                         </div>
+                        <div class="mt-3">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </nav> 
+                        </div>
                     </div>
 				<!-- Akhir Modal -->
                 
 			</div>
-			
+			<?= $this->pagination->create_links(); ?>
 			<!-- Akhir Card -->
                
             </div>
@@ -1234,7 +1256,7 @@
 					<!-- <hr style="width: 80px;"> -->
 				</div>
 				<div class=" col-md-6" data-aos="fade-up" data-aos-duration="3000">
-					<img class="lazy img-fluid d-flex justify-content-center" data-original="<?php echo base_url('assets/img/cara_belanja.png') ?>" style="width:600px"  alt="...">
+					<img class="img-fluid d-flex justify-content-center" src="<?php echo base_url('assets/img/cara_belanja.png') ?>" style="width:600px"  alt="...">
 				</div>
 				<div class="col-md-6">
 					<div style="margin-top:15%;margin-bottom:5%">
@@ -1327,6 +1349,40 @@
             });
 
         });
+    </script> -->
+
+
+    <!-- lazyload -->
+    <!-- <script  type="text/javascript" charset="utf-8">
+              document.addEventListener("DOMContentLoaded", function() {
+                var lazyloadImages = document.querySelectorAll("img.lazy");    
+                var lazyloadThrottleTimeout;
+
+                function lazyload () {
+                    if(lazyloadThrottleTimeout) {
+                        clearTimeout(lazyloadThrottleTimeout);
+                    }    
+
+                    lazyloadThrottleTimeout = setTimeout(function() {
+                        var scrollTop = window.pageYOffset;
+                        lazyloadImages.forEach(function(img) {
+                            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                                img.src = img.dataset.src;
+                                img.classList.remove('lazy');
+                            }
+                        });
+                        if(lazyloadImages.length == 0) { 
+                            document.removeEventListener("scroll", lazyload);
+                            window.removeEventListener("resize", lazyload);
+                            window.removeEventListener("orientationChange", lazyload);
+                        }
+                    }, 20);
+                }
+
+                document.addEventListener("scroll", lazyload);
+                window.addEventListener("resize", lazyload);
+                window.addEventListener("orientationChange", lazyload);
+            });
     </script> -->
 
     <!-- script live search -->

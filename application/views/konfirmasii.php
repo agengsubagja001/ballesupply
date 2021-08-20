@@ -38,7 +38,7 @@
                     <th scope="col">Harga</th>
                     <th scope="col">QTY</th>
                     <th style="text-align: -webkit-auto;" scope="col">Jumlah Harga</th>
-                    <td col="col">ukuran</td>
+                    <td scope="col">ukuran</td>
                     <th scope="col">warna</th>
               </tr>
             </thead>
@@ -46,9 +46,9 @@
                 <tr>
                     <td style="text-align: -webkit-auto;"><?php echo $nama_produk; ?></td>
                     <td><?php echo $berat;?> Gram</td>
-                    <td>Rp.<?php echo $harga;?></td>
+                    <td>Rp.<?php echo number_format($harga);?></td>
                     <td><?php echo $kuantyty;?></td>
-                    <td><b><?php echo $jumlah;?></b></td>
+                    <td><b><?php echo number_format($jumlah);?></b></td>
                     <td><?php echo $ukuran; ?></td>
                     <td><?php echo $warna; ?></td>
                 </tr>
@@ -60,7 +60,7 @@
          </div>
         </div>
         <div class="col-md-12 text-right">
-            <span> Harga Total:  <b><?php echo $jumlah;?></b></span>
+            <span> Harga Total:  <b><?php echo number_format($jumlah);?></b></span>
         </div>
        <div class="col-md-12 text-right mt-2">
             <a href="https://api.whatsapp.com/send?phone=62895354997040&text=Saya%20membeli : <?php echo $nama_produk ?> %20%0ABerat%20Produk : <?php echo $berat ?> Gram %20%0ADengan%20Jumlah : <?php echo $kuantyty ?> qty %0AVarian :<?php $warna ?> %0Aukuran : <?php echo $ukuran  ?> %20%0Adengan%20harga :Rp. <?php echo $jumlah ?> %0A"  class=" btn btn-warning" name ="submit" type="submit" aria-hidden="true"></i>Bayar Sekarang</a>

@@ -8,6 +8,11 @@ class Model_barang extends CI_Model{
         return $this->db->get('produk');
     }
 
+    // public function tampil_data($number,$limit, $start){
+
+    //     return $this->db->get('produk', $number, $limit, $start)->result();
+    // }
+
 
     //FUNCTION SEARCH
     public function get_produk_keyword($keyword){
@@ -33,8 +38,37 @@ class Model_barang extends CI_Model{
     }
     // FUNCTION JOIN
     public function join(){
+        
         $data=$this->db->query("SELECT produk.nama_produk,produk.harga,produk.berat,produk.deskripsi,produk.foto_utama,produk.foto_samping,produk.foto_atas,varian.isi_varian FROM produk INNER JOIN varian ON varian.id_produk=produk.id_produk");
         return $data;
+
+
+    // awal fungsi explode
+    // $text="SELECT produk.nama_produk,produk.harga,produk.berat,produk.deskripsi,produk.foto_utama,produk.foto_samping,produk.foto_atas,varian.isi_varian FROM produk INNER JOIN varian ON varian.id_produk=produk.id_produk";
+
+ 
+
+    // echo "text awal = '$text'";
+
+ 
+
+    // $hobi=explode(",", $text);
+
+ 
+
+    // echo "<p>Hasilnya Ketika Menggunakan fungsi Explode</p><pre>";
+
+    // print_r($hobi);
+
+    // echo "</pre>";
+
+
+    // foreach ($hobi as $key => $data) {
+
+    //     echo "$key. $data<br/>";
+    // }
+
+    // akhir fungsi explode
 
     }
 
@@ -62,6 +96,10 @@ class Model_barang extends CI_Model{
 
             $this->db->where($where);
             $this->db->delete($table);
+        }
+
+        public function pagination(){
+            return $this->db->get('produk')->num_rows();
         }
 
 
