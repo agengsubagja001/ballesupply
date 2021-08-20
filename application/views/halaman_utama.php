@@ -1126,9 +1126,9 @@
                                                         <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">ukuran</P>
                                                             <select class="form-control" name="ukuran">
                                                                 <option>Pilih ukuran</option>
-                                                                <?php foreach ($gabung as $jon) :  ?>
-                                                                    <option><?php echo $jon->isi_varian ?></option>
-                                                                <?php endforeach ?>
+                                                                <!-- <?php foreach ($gabung as $jon) :  ?> -->
+                                                                    <option value=""><?php echo $jon->isi_varian ?></option>
+                                                                <!-- <?php endforeach ?> -->
                                                             </select> 
                                                     </div>
                                                     <div class="col-md-5"  >
