@@ -1129,6 +1129,10 @@
 																<option value="S">S</option>
 																<option value="M">M</option>
 																<option value="L">L</option>
+                                                                <!-- <?php foreach ($gabung as $jon) :  ?> -->
+                                                                    <option value=""><?php echo $jon->isi_varian ?></option>
+                                                                <!-- <?php endforeach ?> -->
+
                                                             </select> 
                                                     </div>
                                                     <div class="col-md-5"  >

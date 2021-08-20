@@ -22,7 +22,7 @@
 
                 <!-- Topbar -->
 
-                <nav class="navbar navbar-expand navbar-light bg-primary topbar mb-4 static-top shadow" style="background: #0049A8;">
+				<nav class="navbar navbar-expand navbar-light bg-primary topbar mb-4 static-top shadow" style="background: #0049A8;">
                     <?php $this->load->view('admin/partial/topbar')  ?>
                 </nav>
 
