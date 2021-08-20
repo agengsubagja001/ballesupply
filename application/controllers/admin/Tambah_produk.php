@@ -174,13 +174,15 @@ class Tambah_produk extends CI_Controller {
 			echo "<script>console.log('Berhasil')</script>";
 
 			$data = array(
+						'id_produk' => $id_produk,
 						'nama_produk' => $nama_produk,
 						'deskripsi' => $deskripsi,
 						'harga' => $harga,
 						'berat'=> $berat,
 						'foto_utama'=> $encrypted,
 						'foto_samping' => $encrypteddua,
-						'foto_atas' => $encryptetiga
+						'foto_atas' => $encryptetiga,
+						'id_varian' => $id_varian
 			);
 			// Array Varian
 			$data_varian = array(
