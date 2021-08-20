@@ -38,9 +38,9 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?php echo base_url('admin/kategori') ?>"  data-target="#transaksi" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="<?php echo base_url('admin/blog') ?>"  data-target="#transaksi" aria-expanded="true" aria-controls="collapseUtilities">
             <!-- <i class="fas fa-book"></i> -->
-            <span>Kategori</span>
+            <span>Blog</span>
         </a>
         <div id="transaksi" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -49,7 +49,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" style="display:none">
         <a class="nav-link collapsed" href="<?php echo base_url('admin/varian') ?>" data-target="#fasilitas" aria-expanded="true" aria-controls="collapseUtilities">
             <!-- <i class="fas fa-home"></i> -->
             <span>Varian</span>
