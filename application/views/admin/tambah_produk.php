@@ -53,7 +53,7 @@
                                         </thead>
                                         <tbody>
                                             <?php $no=1; ?>
-                                            <?Php foreach ($item as $brg) : ?>
+                                            <?php foreach ($item as $brg) : ?>
                                             <tr>
                                                 <td><?php echo $no++ ?></td>
                                                 <td><img src="<?php echo base_url(). '/assets/gambar_utama/'. $brg->foto_utama ?>" class="img-fluid" style="width: 100px; left: px; top: 454px" alt=""></td>
@@ -63,9 +63,7 @@
                                                 <td>
                                                 <div class="row">
                                                     <div class="col-md-2" style="padding:5px;">
-                                                        <a href="" data-toggle="modal" data-target="#edit_data">
-                                                            <button type="submit" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
-                                                        </a>
+                                                            <button data-toggle="modal" data-target="#edit_data<?php echo $brg->id_produk?>" class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-pencil-square-o" style="color:#FDD922;" aria-hidden="true"></i></button>
                                                     </div>
                                                     
                                                     <div class="col-md-2"></div>
@@ -75,7 +73,58 @@
                                                             '<button type="button" data="modal"  class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button>')?>
                                                     </div>
                                                 </div>                           
-                                                </td>
+												</td>
+												<!-- Modal Edit -->
+												<div class="modal fade" id="edit_data<?php echo $brg->id_produk?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="exampleModalLabel">Ubah Data Produk</h5>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">
+																
+																<form  action="<?php  echo base_url('admin/tambah_produk/ubah_data_produk');?>"  method="post" enctype="multipart/form-data">
+																<!-- String ID PRODUK-->
+																<!-- Akhir  STRING ID PRODUK -->
+																<div class="form-group">
+																	<label>Nama barang</label>
+																	<input type="hidden" value="<?php echo $brg->id_produk?>" name="id_produk_edit">
+																	<input type="text" name="nama_produk_edit" class="form-control" value="<?php echo $brg->nama_produk?>">
+																</div>
+
+																<div class="form-group">
+																	<label>Deskripsi</label>
+																	<textarea name="deskripsi_edit" id="" cols="30" rows="10" class="form-control"><?php echo $brg->deskripsi?></textarea>
+																</div>
+																	<div class="row">
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label>Harga</label>
+																				<input type="number" name="harga_edit" class="form-control" value="<?php echo $brg->harga?>">
+																			</div>
+																		</div>
+																		<div class="col-md-6">
+																			<div class="form-group">
+																				<label>Berat (Gram)</label>
+																				<input type="number" name="berat_edit" value="<?php echo $brg->berat?>" class="form-control">
+																			</div>
+																		</div>
+																	</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+															<button type="submit" class="btn btn-primary" name="btn_add">Ubah</button>
+														</div>
+
+																</form>
+														
+														</div>
+													</div>
+												</div>
+												<!-- Akhir Modal -->
                                             </tr>
                                         <?php endforeach ?>   
                                         </tbody>
@@ -126,232 +175,135 @@
 
                     <!-- Modal Card Tambah Baru -->
                     <div class="modal fade" id="tambah_baru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Input Produk</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-								
-								<form  action="<?php echo base_url('admin/tambah_produk/campur');?>"  method="post" enctype="multipart/form-data">
-								<!-- String ID PRODUK-->
-								<?php
-										function varian($length = 7, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
-										{
-											if($length > 0)
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Input Produk</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+									
+									<form  action="<?php echo base_url('admin/tambah_produk/campur');?>"  method="post" enctype="multipart/form-data">
+									<!-- String ID PRODUK-->
+									<?php
+											function varian($length = 7, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
 											{
-												$len_chars = (strlen($chars) - 1);
-												$the_chars = $chars{rand(0, $len_chars)};
-												for ($i = 1; $i < $length; $i = strlen($the_chars))
+												if($length > 0)
 												{
-													$r = $chars{rand(0, $len_chars)};
-													if ($r != $the_chars{$i - 1}) $the_chars .=  $r;
-												}
+													$len_chars = (strlen($chars) - 1);
+													$the_chars = $chars{rand(0, $len_chars)};
+													for ($i = 1; $i < $length; $i = strlen($the_chars))
+													{
+														$r = $chars{rand(0, $len_chars)};
+														if ($r != $the_chars{$i - 1}) $the_chars .=  $r;
+													}
 
-												return $the_chars;
+													return $the_chars;
+												}
 											}
-										}
-										function produk($length = 8, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
-										{
-											if($length > 0)
+											function produk($length = 8, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
 											{
-												$len_chars = (strlen($chars) - 1);
-												$the_chars = $chars{rand(0, $len_chars)};
-												for ($i = 1; $i < $length; $i = strlen($the_chars))
+												if($length > 0)
 												{
-													$r = $chars{rand(0, $len_chars)};
-													if ($r != $the_chars{$i - 1}) $the_chars .=  $r;
+													$len_chars = (strlen($chars) - 1);
+													$the_chars = $chars{rand(0, $len_chars)};
+													for ($i = 1; $i < $length; $i = strlen($the_chars))
+													{
+														$r = $chars{rand(0, $len_chars)};
+														if ($r != $the_chars{$i - 1}) $the_chars .=  $r;
+													}
+
+													return $the_chars;
 												}
-
-												return $the_chars;
 											}
-										}
 
-								?>
-								<!-- Akhir  STRING ID PRODUK -->
-                                <div class="form-group">
-									<label>Nama barang</label>
-									<input type="hidden" name="id_varian" value="<?php echo varian()?>">
-									<input type="hidden" name="id_produk" value="<?php echo produk()?>">
-                                    <input type="text" name="nama_produk" class="form-control" >
-                                </div>
+									?>
+									<!-- Akhir  STRING ID PRODUK -->
+										<!-- Foto -->
+										<div class="form-group">
+											<div class="row">
+												<div class="col-md-4">
+													<label>Foto Utama</label>
+													<input type="file" name="foto_upload" size="20" class="form-control">
+												</div>
+												<div class="col-md-4">
+													<label>Foto Samping</label>
+													<input type="file" name="foto_uploaddua" size="20" class="form-control">
+												</div>
+												<div class="col-md-4">
+													<label>Foto Atas</label>
+													<input type="file" name="foto_uploadtiga" size="20" class="form-control">
+												</div>
+											</div>
+											
+										</div> 
+									<!-- Akhir Foto -->
+									<div class="form-group">
+										<label>Nama barang</label>
+										<input type="hidden" name="id_varian" value="<?php echo varian()?>">
+										<input type="hidden" name="id_produk" value="<?php echo produk()?>">
+										<input type="text" name="nama_produk" class="form-control" >
+									</div>
 
-                                <div class="form-group">
-                                    <label>Deskripsi</label>
-                                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
-                                </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Harga</label>
-                                                <input type="number" name="harga" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Berat (Gram)</label>
-                                                <input type="number" name="berat" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
+									<div class="form-group">
+										<label>Deskripsi</label>
+										<textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
+									</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Harga</label>
+													<input type="number" name="harga" class="form-control" placeholder="Rp.">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Berat (Gram)</label>
+													<input type="number" name="berat" class="form-control">
+												</div>
+											</div>
+										</div>
 
-                                    
-                                <!-- Varian -->
-                                <div class="form-group">
-                                    <span>Untuk menambahkan Varian Klik button dibwah</span>
-                                    <br>
-                                    <button type="button" class="btn btn-dark" onclick="btn_tambah_varian()" id="tmb_varian">Tambah Varian</button>
-                                </div>
-                                <div class="form-group" style="display:block" id="tampil_var">
-                                    <label for="">Varian</label>
-                                    <select name="nama_varian" class="form-control" id="">
-                                        <option >Pilih Varian</option>
-                                        <option value="Warna" >Warna</option>
-                                        <option value="Ukuran">Ukuran</option>
-                                    </select>
-                                </div>
-                                <!-- Ukuran -->
-                                <div class="form-group" style="display:block">
-                                    <label for="Ukuran">Ukuran</label>
-                                    <textarea name="isi_varian" id="" cols="5" class="form-control" rows="5" placeholder="30,33,S,M,L,XL"></textarea>
-                                </div>
-                                <!-- Warna -->
-                                <div class="form-group" style="display:block">
-                                    <label for="Warna">Warna</label>
-									<textarea name="" id="" cols="5" class="form-control" placeholder="maroon,hitam,hijau" rows="5"></textarea>
-                                </div>
-								<!-- Foto -->
-								<div class="form-group">
-									<label>Foto Produk</label>
-                                    <input type="file" name="foto_upload" size="20" class="form-control">
-								 </div> 
-								 <div class="form-group">
-									<label>Foto Produk</label>
-                                    <input type="file" name="foto_uploaddua" size="20" class="form-control">
-								 </div> 
-								 <div class="form-group">
-									<label>Foto Produk</label>
-                                    <input type="file" name="foto_uploadtiga" size="20" class="form-control">
-								 </div> 
-								<!-- Akhir Foto -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" name="btn_add">Simpan</button>
-                        </div>
+										
+									<!-- Varian -->
+									<div class="form-group">
+										<span>Untuk menambahkan Varian Klik button dibwah</span>
+										<br>
+										<button type="button" class="btn btn-dark" onclick="btn_tambah_varian()" id="tmb_varian">Tambah Varian</button>
+									</div>
+									<div class="form-group" style="display:none" id="tampil_var">
+										<label for="">Varian</label>
+										<select name="nama_varian" class="form-control" id="id_var" onchange="show_ukuran()">
+											<option >Pilih Varian</option>
+											<option value="Warna" >Warna</option>
+											<option value="Ukuran" >Ukuran</option>
+										</select>
+									</div>
+									<!-- Ukuran -->
+									<div class="form-group" style="display:none" id="sect_ukuran">
+										<label for="Ukuran">Ukuran</label>
+										<textarea name="isi_varian" id="" cols="5" class="form-control" rows="5" placeholder="30,33,S,M,L,XL"></textarea>
+									</div>
+									<!-- Warna -->
+									<div class="form-group"  id="sect_warna" style="display:none">
+										<label for="Warna">Warna</label>
+										<textarea name="" id="" cols="5" class="form-control" placeholder="maroon,hitam,hijau" rows="5"></textarea>
+									</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary" name="btn_add">Simpan</button>
+							</div>
 
-								</form>
-                        
-                        </div>
-                    </div>
+									</form>
+							
+							</div>
+						</div>
                     </div>
                     <!-- akhir modal card Tambah Baru -->
 
-                    <!-- Modal Card edit -->
-                    <div class="modal fade" id="edit_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Edit Produk</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        <!-- <?php foreach ($barang as $brg) : ?> -->
-                            <form action="<?php echo base_url(). 'admin/tambah_produk/update'?>" method="post" enctype="multipart/form-data">
-                                
-                                <div class="form-group">
-                                    <label>Nama barang</label>
-                                    <input type="text" name="nama_produk" class="form-control" value="<?php echo $brg->nama_produk ?>">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Deskripsi</label>
-                                    <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"  value="<?php echo $brg->deskripsi ?>"></textarea>
-                                </div>
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Harga</label>
-                                                <input type="number" name="harga" class="form-control"  value="<?php echo $brg->harga ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Berat</label>
-                                                <input type="text" name="berat" class="form-control"  value="<?php echo $brg->berat ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    
-                                <!-- Varian -->
-                                <div class="form-group">
-                                    <span>Untuk menambahkan Varian Klik button dibwah</span>
-                                    <br>
-                                    <button type="button" class="btn btn-dark" onclick="btn_tambah_varian()" id="tmb_varian">Tambah Varian</button>
-                                </div>
-                                <div class="form-group" style="display:block" id="tampil_var">
-                                    <label for="">Varian</label>
-                                    <select name="" class="form-control" id="">
-                                        <option >Pilih Varian</option>
-                                        <option value="Warna" >Warna</option>
-                                        <option value="Ukuran">Ukuran</option>
-                                    </select>
-                                </div>
-                                <!-- Ukuran -->
-                                <div class="form-group" style="display:block">
-                                    <label for="Ukuran">Ukuran</label>
-                                    <select name="" class="form-control" id="">
-                                        <option value="">Pilih Ukuran</option>
-                                        <option value="31">31</option>
-                                        <option value="32">32</option>
-                                    </select>
-                                </div>
-                                <!-- Warna -->
-                                <div class="form-group" style="display:block">
-                                    <label for="Warna">Warna</label>
-                                    <select name="" class="form-control" id="">
-                                        <option>Pilih Warna</option>
-                                        <option value="Merah">Merah</option>
-                                        <option value="Hitam"></option>
-                                    </select>
-                                </div>
-                                <!-- Akhir Varian -->
-
-                                <!-- <div class="form-group">
-                                    <label>Gambar produk utama</label>
-                                    <input type="file" name="foto_utama" class="form-control"  value="<?php echo $brg->foto_utama ?>">
-                                </div>
-
-                                 <div class="form-group">
-                                    <label>Gambar produk samping</label>
-                                    <input type="file" name="foto_samping" class="form-control"  value="<?php echo $brg->foto_samping ?>">
-                                </div>    
-                                
-                                <div class="form-group">
-                                    <label>Gambar Produk atas</label>
-                                    <input type="file" name="foto_atas" class="form-control" value="<?php echo $brg->foto_atas ?>">
-                                </div> -->
-                                
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
-
-                        </form>
-                        <!-- <?php endforeach; ?> -->
-                        
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Akhir modal card edit -->
 
                     <!-- FUNCTION DATA TABLE -->
                    
@@ -375,6 +327,27 @@
                 </div>
             </div>
         </div>
-    </div>
+	</div>
+	<!-- Validasi Varian -->
+	<!-- Alert -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+	<script>
+		function btn_tambah_varian(){
+			document.getElementById("tampil_var").style.display = "block";
+		}
+		function show_ukuran(){
+			
+			var x = document.getElementById("id_var").value;
+  			if(x == "Ukuran"){
+				document.getElementById("sect_ukuran").style.display = "block";
+				document.getElementById("sect_warna").style.display = "none";
+			  }else if(x == "Warna"){
+				document.getElementById("sect_warna").style.display = "block";
+				document.getElementById("sect_ukuran").style.display = "none";
+			  }
+		}
+	</script>
+	<!-- Akhir Validasi -->
 
 </body>

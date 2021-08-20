@@ -114,40 +114,17 @@
 												<th scope="col">No</th>
 												<th scope="col">Produk</th>
 												<th scope="col">Nama</th>
-												<th scope="col">Kategori</th>
 												</tr>
 											</thead>
 											<tbody>
+											<?php $no = 1;?>
+											<?php foreach ($item as $brg) : ?>
 												<tr>
-													<th scope="row">1</th>
+													<th scope="row"><?php echo $no++?></th>
 													<td>Mark</td>
-													<td>Otto</td>
-													<td>@mdo</td>
+													<td><?php echo $brg->nama_produk ?></td>
 												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-												<tr>
-													<th scope="row">3</th>
-													<td>Larry</td>
-													<td>the Bird</td>
-													<td>@twitter</td>
-												</tr>
-												<tr>
-													<th scope="row">4</th>
-													<td>Larry</td>
-													<td>the Bird</td>
-													<td>@twitter</td>
-												</tr>
-												<tr>
-													<th scope="row">5</th>
-													<td>Larry</td>
-													<td>the Bird</td>
-													<td>@twitter</td>
-												</tr>
+											<?php endforeach ?>
 											</tbody>
 										</table>
 										<!-- Akhir Table -->

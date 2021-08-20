@@ -1,13 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
-	public function __construct()
-        {
-                parent::__construct();
-				$data['item'] = $this->model_produk->tampil_data()->result();
-				
-        }
+class Blog extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -26,8 +20,7 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['item'] = $this->model_produk->tampil_data()->result();
-		$this->load->view('admin/dashboard');
 		
+		$this->load->view('admin/blog');
 	}
 }

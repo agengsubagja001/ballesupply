@@ -27,6 +27,8 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url() ?>template_admin/css/sb-admin-2.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	
+    <!-- Akhir Sweet Alert -->   
 	<!-- Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

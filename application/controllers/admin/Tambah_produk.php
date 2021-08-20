@@ -7,13 +7,16 @@ class Tambah_produk extends CI_Controller {
 	public function __construct()
         {
                 parent::__construct();
-                $this->load->helper(array('form', 'url'));
+				$this->load->helper(array('form', 'url'));
+				// $this->load->view('admin/admin/partial/head';
         }
 
 	public function index()
 	{
 		$data['item'] = $this->model_produk->tampil_data()->result();
+		$this->load->view('admin/partial/head',$data);
 		$this->load->view('admin/tambah_produk',$data);
+
 	}
 
 
@@ -90,6 +93,28 @@ class Tambah_produk extends CI_Controller {
         }
 
 	// Tes Github
+	// Ubah Produk
+	function ubah_data_produk(){
+		$id_produk_edit = $this->input->post('id_produk_edit');
+		$edit_nama_produk = $this->input->post('nama_produk_edit');
+		$edit_deskripsi_produk = $this->input->post('deskripsi_edit');
+		$edit_harga_produk = $this->input->post('harga_edit');
+		$edit_berat_produk = $this->input->post('berat_edit');
+
+		$array_edit = array(
+            'nama_produk'  => $edit_nama_produk,
+            'deskripsi' => $edit_deskripsi_produk,
+			'harga' => $edit_harga_produk,
+			'berat' => $edit_berat_produk
+		);
+		$this->model_barang->ubah_produk($array_edit,$id_produk_edit);
+		echo "<script>
+						alert('Data Berhasil Di Input');
+					</script>";
+	    redirect('admin/tambah_produk');
+
+	}
+	// Akhir Ubah Produk
 	public function campur(){
 		if (isset($_POST['btn_add'])) {
 			$nama_produk = $this->input->post('nama_produk');
@@ -113,16 +138,23 @@ class Tambah_produk extends CI_Controller {
 			$foto_tiga_tmp = $_FILES['foto_uploadtiga']['tmp_name'];
 
 			 // cek ekstensi foto
-			 $ekstensiGambarValid = ['jpg','jpeg','png','webp'];
+			 $ekstensiGambarValid = ['jpg','jpeg','png','webp','PNG','JPG'];
 			 $ekstensiGambar = explode('.',$foto_satu);
 			 $ekstensiGambar = strtolower(end($ekstensiGambar));
+			  // cek ekstensi foto
+			 //   $ekstensiGambarValid = ['jpg','jpeg','png','webp','PNG','JPG'];
+			  $ekstensiGambardua = explode('.',$foto_dua);
+			  $ekstensiGambardua = strtolower(end($ekstensiGambar));
+			  //   $ekstensiGambarValid = ['jpg','jpeg','png','webp','PNG','JPG'];
+			  $ekstensiGambartiga = explode('.',$foto_tiga);
+			  $ekstensiGambartiga = strtolower(end($ekstensiGambar));
 			
-			 if( !in_array($ekstensiGambar,$ekstensiGambarValid)){
-			 echo"<script>
-			 alert('Salah Ekstensi');
-			 </script>";
-			 return false;
-			 }
+			//  if( !in_array($ekstensiGambar,$ekstensiGambarValid)){
+			//  echo"<script>
+			//  alert('Salah Ekstensi');
+			//  </script>";
+			//  return false;
+			//  }
 			  // // GENERAT NAME PHOTO 1\
 			  $encrypted = base64_encode($foto_satu);
 			  $encrypted .= '.';
@@ -130,13 +162,11 @@ class Tambah_produk extends CI_Controller {
 			  // // GENERAT NAME PHOTO 1\
 			  $encrypteddua = base64_encode($foto_dua);
 			  $encrypteddua .= '.';
-			  $encrypteddua .= $ekstensiGambar;
+			  $encrypteddua .= $ekstensiGambardua;
 			  // // GENERAT NAME PHOTO 1\
 			  $encryptetiga = base64_encode($foto_tiga);
 			  $encryptetiga .= '.';
-			  $encryptetiga .= $ekstensiGambar;
-			  $HARGA_PRDUKDSATU = "33.000";
-			  echo $HARGA_PRDUKDSATU;
+			  $encryptetiga .= $ekstensiGambartiga;
 			
 			move_uploaded_file($foto_satu_tmp,'./assets/gambar_utama/'.$encrypted);
 			move_uploaded_file($foto_dua_tmp,'./assets/gambar_samping/'.$encrypteddua);
@@ -163,9 +193,14 @@ class Tambah_produk extends CI_Controller {
 					$this->model_barang->input_data($data,'produk');
 					// Insert Varian
 					$this->model_barang->input_data($data_varian,'varian');
-					echo "<script>console.log('berhasil simpan gambar') </script>";
-					// redirect('admin/tambah_produk');
+					echo "<script>
+						alert('Data Berhasil Di Input');
+					</script>";
+					redirect('admin/tambah_produk');
+					// echo "<script>console.log('Berhasil')</script>";
 
+
+		}else{
 
 		}
 
