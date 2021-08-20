@@ -117,14 +117,14 @@
 												</tr>
 											</thead>
 											<tbody>
-											<?php $no = 1;?>
-											<?php foreach ($item as $brg) : ?>
+											
+											
 												<tr>
-													<th scope="row"><?php echo $no++?></th>
-													<td>Mark</td>
-													<td><?php echo $brg->nama_produk ?></td>
+													<th scope="row">1</th>
+													<td><img style="width:150px;" class="img-fluid" src="<?php echo base_url('/assets/gambar_utama/bergo1.jpg') ?>"></td>
+													<td>Pashmina Babydoll / pashmina Ceruty baby doll - Mause</td>
 												</tr>
-											<?php endforeach ?>
+											
 											</tbody>
 										</table>
 										<!-- Akhir Table -->

@@ -12,6 +12,9 @@
 					<li class="nav-item">
 						<a class="nav-link" style="color:#fff" href="<?php echo base_url('blog'); ?>">Blog</a>
 					</li>
+					<li class="nav-item">
+						<a class="btn btn-dark" style="color:#fff" href="<?php echo base_url('auth'); ?>">Masuk</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
