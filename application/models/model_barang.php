@@ -72,7 +72,7 @@ class Model_barang extends CI_Model{
 			$this->db->update('produk', $array_edit);
 			return TRUE;
 		}
-
+       
 
 
 

@@ -25,7 +25,8 @@ class Halaman_utama extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+	{   
+		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
 		$data['gabung']=$this->model_barang->join()->result();
 		$data['card'] = $this->model_barang->tampil_data()->result();
 		// $this->load->view('www',$data);
@@ -43,8 +44,34 @@ class Halaman_utama extends CI_Controller {
         $this->load->view('halaman_utama',$data);
 		
     }
-	public function buy(){
-         $this->load->view('halaman_utama',$data);
+	
+	function add_cart()
+	{
+		$id_keranjang        = $this->input->post('id_keranjang');
+		$ip                  = $this->input->post('ip');
+		$nama_produk         = $this->input->post('nama_produk');
+		$berat               = $this->input->post('berat');
+        $harga               = $this->input->post('harga');
+		$qty                 = $this->input->post('qty');
+		$ukuran              = $this->input->post('ukuran');
+		$warna               = $this->input->post('warna');
+			   
+		 $dataa = array(
+			    'id_keranjang'       => $id_keranjang,
+			    'ip'                 => $ip,
+				'nama_produk'        => $nama_produk,
+				'berat'              => $berat,
+				'harga'              => $harga,
+				'qty'                => $qty,
+				'ukuran'             => $ukuran,
+				'warna'              => $warna,
+		         
+			);    
+
+
+		 $this->model_keranjang->add_cart_m($dataa,'keranjang');
+		 redirect('halaman_utama');
 		
-    }
+
+	  }
 }

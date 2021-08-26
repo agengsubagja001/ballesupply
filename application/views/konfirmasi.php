@@ -5,7 +5,7 @@
     <!-- deklarasi variabel -->
         <?php $this->load->view('partial/navbar') ?>
 
-        <h5 class="text-center"><b>CHECKOUT BARANG</b></h5>
+        <h5 class="text-center"><b>Keranjang Belanja</b></h5>
 
         <?php if(isset($_POST['test'])){
                 $nama_produk=$_POST['nama_pdk'];
@@ -21,7 +21,7 @@
         } ?>
 
 <!-- card menampilkan tabel -->
-<div class="card text-center container">
+<div class="card container">
 
     <div class="card">
         <div class="col-md-12">
@@ -29,7 +29,8 @@
           <h5>Detail Pesananmu</h5>
           </div>
           <div class="table-responsive">
-          <table class="table">    
+          <table class="table">
+                  
            <thead>
               <tr>
                     <th style="text-align: -webkit-auto;" scope="col">Nama Produk</th>
@@ -39,6 +40,7 @@
                     <th style="text-align: -webkit-auto;" scope="col">Jumlah Harga</th>
                     <th scope="col">Ukuran</th>
                     <th scope="col">warna</th>
+
               </tr>
             </thead>
             <tbody>
@@ -54,7 +56,8 @@
                 <tr>
                     
                 </tr>
-            </tbody>
+            </tb
+            ody>
            </table>
          </div>
         </div>

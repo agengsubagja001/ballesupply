@@ -5,7 +5,7 @@
     <!-- deklarasi variabel -->
         <?php $this->load->view('partial/navbar') ?>
 
-        <h5 class="text-center">CHECKOUT BARANG</h5>
+        <h5 class="text-center">Keranjang Belanja</h5>
 
         <?php if(isset($_POST['test1'])){
                 $nama_produk=$_POST['nama_pdk'];
@@ -38,7 +38,7 @@
                     <th scope="col">Harga</th>
                     <th scope="col">QTY</th>
                     <th style="text-align: -webkit-auto;" scope="col">Jumlah Harga</th>
-                    <td scope="col">ukuran</td>
+                    <th scope="col">ukuran</th>
                     <th scope="col">warna</th>
               </tr>
             </thead>
