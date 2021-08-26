@@ -38,7 +38,7 @@
                     <th scope="col">Harga</th>
                     <th scope="col">QTY</th>
                     <th style="text-align: -webkit-auto;" scope="col">Jumlah Harga</th>
-                    <td scope="col">ukuran</td>
+                    <th scope="col">ukuran</th>
                     <th scope="col">warna</th>
               </tr>
             </thead>

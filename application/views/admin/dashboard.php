@@ -105,7 +105,7 @@
 								<div class="col-md-12">
 									<h5 style="font-family: Raleway;font-weight:600">Produk</h5>
 								</div>
-								<div style="width: 100%;border-radius:20px;height:320px;background-color:#fff;box-shadow: 0 5px 10px rgb(73 84 100 / 5%);border-color: transparent;position:relative">
+								<div style="width: 100%;border-radius:20px;height:400px;background-color:#fff;box-shadow: 0 5px 10px rgb(73 84 100 / 5%);border-color: transparent;position:relative">
 									<div class="table-responsive">
 										<!-- Table -->
 										<table class="table">
@@ -121,8 +121,18 @@
 											
 												<tr>
 													<th scope="row">1</th>
-													<td><img style="width:150px;" class="img-fluid" src="<?php echo base_url('/assets/gambar_utama/bergo1.jpg') ?>"></td>
+													<td><img style="width:70px;" class="img-fluid" src="<?php echo base_url('/assets/gambar_utama/bergo1.jpg') ?>"></td>
 													<td>Pashmina Babydoll / pashmina Ceruty baby doll - Mause</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td><img style="width:70px;" class="img-fluid" src="<?php echo base_url('/assets/gambar_utama/sienna1.jpg') ?>"></td>
+													<td>SiennaLuxury Voal / Voal Premium - Sand</td>
+												</tr>
+												<tr>
+													<th scope="row">3</th>
+													<td><img style="width:70px;" class="img-fluid" src="<?php echo base_url('/assets/gambar_utama/derby1.jpg') ?>"></td>
+													<td>SEPATU PRIA DERBY SINTESIS - 40</td>
 												</tr>
 											
 											</tbody>

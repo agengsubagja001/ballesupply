@@ -13,8 +13,12 @@
 						<a class="nav-link" style="color:#fff" href="<?php echo base_url('blog'); ?>">Blog</a>
 					</li>
 					<li class="nav-item">
+						<a class="fa fa-shopping-cart" style="color:white; transform: translateY(9px); margin-right: 12px; margin-left: 10px;" href="<?php echo base_url('detail'); ?>"></i><span class="badge badge-pill badge-danger" id="hasil" style="transform:translateY(-10px)">2</span><input type="text" style="display:none" id="number" value="0"/></a>
+					</li>
+					<li class="nav-item">
 						<a class="btn btn-dark" style="color:#fff" href="<?php echo base_url('auth'); ?>">Masuk</a>
 					</li>
+					
 				</ul>
 			</div>
 		</nav>
