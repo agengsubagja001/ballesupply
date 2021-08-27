@@ -51,5 +51,12 @@ class Detail_keranjang extends CI_Controller {
 		 echo "<script>console.log('Data Berhasil Di Simpan')</script>";
 		}
 	}
+	// hapus 
+	public function hapus ($kjr)
+	{
+		$where = array('id_keranjang' => $kjr);
+		$this->model_keranjang->hapus_data($where, 'keranjang');
+		redirect('detail_keranjang');
+	}
 	
 }

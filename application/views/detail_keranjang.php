@@ -39,6 +39,7 @@
                     <th scope="col">QTY</th>
                     <th scope="col">Ukuran</th>
                     <th scope="col">warna</th>
+                    <th>Aksi</th>
                     
               </tr>
             </thead>
@@ -52,6 +53,7 @@
                         <td><?php echo $kjr->qty ?></td>
                         <td><?php echo $kjr->ukuran  ?></td>
                         <td><?php echo $kjr->warna  ?></td>
+                        <td><a href="<?=site_url('detail_keranjang/hapus/'.$kjr->id_keranjang,) ;?>" onclick="return confirm('Yakin akan menghapus data?')"><button type="button" data="modal"  class="btn btn-small" style="background: #FFFFFF; box-shadow: 0px 23px 80px rgba(0, 0, 0, 0.12), 0px 9.60885px 33.4221px rgba(0, 0, 0, 0.0862625), 0px 5.13735px 17.869px rgba(0, 0, 0, 0.0715329), 0px 2.87996px 10.0172px rgba(0, 0, 0, 0.06), 0px 1.52952px 5.32008px rgba(0, 0, 0, 0.0484671), 0px 0.636469px 2.21381px rgba(0, 0, 0, 0.0337375);"><i class="fa fa-trash" style="color:#FC185A;" aria-hidden="true"></i></button></a></td>
                     </tr>
                 <?php endforeach ?>    
              </tbody>
@@ -83,11 +85,14 @@
         <div class="col-md-12 text-right">
         <p class="font-italic" style="color:#FC185A;">Ini Belum Termasuk Ongkir</p>
         </div>
-        <div class="col-md-12">
-        <button class="btn btn-light " ><span style="color=ffff;">Kembali belanja</span></button>
-        </div>
         </form>
+        <div class="col-md-12 text-right">
+          <a href="<?= base_url() ?>halaman_utama">
+             <button class="btn btn-outline-dark "><span style="color=ffff;">Kembali belanja</span></button>
+          </a>  
+        </div>
         <br>
+        
       </div>
       </div>  
       <!-- akhir detail keranjang -->

@@ -35,4 +35,10 @@ class Model_keranjang extends CI_Model{
     function add_cart_m($dataa,$table){
          $this->db->insert($table, $dataa);
     }
+    //FUNCTION HAPUS
+    public function hapus_data($where, $table){
+
+      $this->db->where($where);
+      $this->db->delete($table);
+}
 }    
