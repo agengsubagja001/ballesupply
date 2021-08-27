@@ -92,9 +92,8 @@
                                     </select>
                                 </div> 
                             <div>
-                                
-                                     <button type="submit" name="tambah" class="btn btn-dark" value="tambah">Lanjutkan Pembayaran</button>
-                                <a href="<?php echo base_url('pembayaran'); ?>" style="text-white ml-3">Kembali Ke Keranjang</a>
+								<button type="submit" name="tambah" class="btn btn-dark" value="tambah">Lanjutkan Pembayaran</button>
+								<a href="<?php echo base_url('pembayaran'); ?>" class="btn btn-outline-dark">Kembali Belanja</a>
                             </div>
                         </form>
                     </div>

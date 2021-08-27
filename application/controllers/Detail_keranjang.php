@@ -49,6 +49,7 @@ class Detail_keranjang extends CI_Controller {
 
 		 $this->model_keranjang->add_cart_m($dataa,'detail_keranjang');
 		 echo "<script>console.log('Data Berhasil Di Simpan')</script>";
+		 redirect('alamat');
 		}
 	}
 	// hapus 
