@@ -98,6 +98,31 @@
 				AOS.init();
 			</script>
 			<!-- Akhir AOS js scroll gambar -->
+
+
+			<!-- JS Select Wilayah -->
+			<script>
+				$(document).ready(function(){
+					$("#provinsi").change(function (){
+						var url = "<?php echo site_url('alamat/add_ajax_kab');?>/"+$(this).val();
+						$('#kota').load(url);
+						return false;
+					})
+					
+					$("#kota").change(function (){
+						var url = "<?php echo site_url('alamat/add_ajax_kec');?>/"+$(this).val();
+						$('#kecamatan').load(url);
+						return false;
+					})
+					
+					$("#kecamatan").change(function (){
+						var url = "<?php echo site_url('alamat/add_ajax_des');?>/"+$(this).val();
+						$('#desa').load(url);
+						return false;
+					})
+				});
+			</script>
+    		<!-- Select Wilayah -->
 			
 			
 			</script>
