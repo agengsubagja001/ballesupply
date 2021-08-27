@@ -13,7 +13,8 @@
 						<a class="nav-link" style="color:#fff" href="<?php echo base_url('blog'); ?>">Blog</a>
 					</li>
 					<li class="nav-item" style="margin-right: 20px;">
-			    		<a class="fa fa-shopping-cart" style="color:white; transform: translate(10px, 10px);" href="<?php echo base_url('detail_keranjang'); ?>"></i><span class="badge badge-pill badge-danger" id="hasil" style="transform:translateY(-10px)"> <?php 
+			    		<a class="fa fa-shopping-cart" style="color:white; transform: translate(10px, 10px);" href="<?php echo base_url('detail_keranjang'); ?>"></i><span class="badge badge-pill badge-danger" id="hasil" style="transform:translateY(-10px)"> 
+						<?php 
 						foreach($jml_qty as $row):?>
 						     <span> <?php echo ($row->qty) ?></span>
 						<?php endforeach ?> </span><input type="text" style="display:none" id="number" value="0"/></a>
