@@ -54,6 +54,7 @@ class Alamat extends CI_Controller {
 
 	// FUNCTION TAMBAH DATA
 	public function tambah_aksi(){
+		$ip_alamat = $this->input->post('ip_alamat');
 		$id_pembeli = $this->input->post('id_pembeli');
 		$no_telepon = $this->input->post('no_telepon');
 		$nama_pembeli = $this->input->post('nama_pembeli');
@@ -64,6 +65,7 @@ class Alamat extends CI_Controller {
 		$kodepos = $this->input->post('kodepos');
  
 		$data = array(
+			'ip'         =>$ip_alamat,
 			'id_pembeli' => $id_pembeli,
 			'no_telepon' => $no_telepon,
 			'nama_pembeli' => $nama_pembeli,

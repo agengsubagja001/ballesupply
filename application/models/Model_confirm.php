@@ -16,5 +16,16 @@ class Model_confirm extends CI_Model{
 		return $this->db->get(); 
 	 //    return $this->db->get()->result();
 		
+	} 
+	public function tampil_data_detail_keranjang(){
+		$ip= $_SERVER['REMOTE_ADDR'];
+		$this->db->from('detail_keranjang');
+		$this->db->where('ip',$ip);
+		return $this->db->get(); 
+	 //    return $this->db->get()->result();
+		
   }     
+  public function input_data($data,$table){
+	$this->db->insert($table, $data);
+  }
 }    

@@ -1,5 +1,6 @@
 <?php $this->load->view('partial/head'); ?>
 <?php $this->load->view('partial/navbar'); ?>
+
 <body> 
     <!-- dekrlerasi -->
 	<section class="content">
@@ -79,19 +80,115 @@
 							</div>
 							<hr style="width:100%">
 						</div>
-						<div class="col-md-12 p-3 text-right">
-							<button class="btn btn-dark" style="width:210px;margin-bottom:10px">Lanjut Ke Pembayaran</button>
-							<br>
-							
+						<div class="col-md-12">
+							<form id="payment-form" method="post" action="<?=site_url()?>confirm_cart/finish">
+							<input type="hidden" name="result_type" id="result-type" value="">
+								<input type="hidden" name="result_data" id="result-data" value="">
+								<?php foreach ($buyer as $buy) :?>
+									<input type="hidden" name="penerima_detail" id="penerima_detail" value="<?php echo $buy->nama_pembeli ?>">
+									<input type="hidden" value="<?php echo $buy->no_telepon?>" name="no_detail" id="no_detail">
+									<input type="hidden" value="<?php echo $buy->alamat?>" name="alamat_detail" id="alamat_detail">
+								<?php endforeach ?>
+								<?php foreach ($query as $cart) : ?>
+									<input type="hidden" value="<?php echo $cart->nama_produk ?>" name="produk_detail" id="produk_detail">
+									<input type="hidden" value="<?php echo $cart->qty?>" name="qty_detail" id="qty_detail">
+									<input type="hidden" value="<?php echo $cart->harga?>" name="harga_detail" id="harga_detail">
+								<?php endforeach?>
+								<?php foreach ($detail_keranjang as $cart_detail) : ?>
+									<input type="hidden" value="<?php echo $cart_detail->total_harga ?>" name="total_detail" id="total_detail">
+								<?php endforeach?>
+								<br>
+								<button class="btn btn-dark" id="pay-button" style="width:210px;margin-bottom:10px">Lanjut Ke Pembayaran</button>
+								<br>
+								</form>
 						</div>
+						
+						</div>
+						
 					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
+				<div class="col-md-4">
 				<img src="https://kopertais5.ar-raniry.ac.id/assets_/img/team/team-1.jpg" style="width:400px" class="img-fluid" alt="">
 			</div>
+			</div>
+			
+			
+				
+			</form>
 		</div>
 	</section>
     <!-- footer -->
-<?php $this->load->view('partial/footer') ?>     
+<?php $this->load->view('partial/footer') ?>   
+  <!-- Checkout -->
+  <script type="text/javascript">
+  
+  $('#pay-button').click(function (event) {
+	  event.preventDefault();
+	  $(this).attr("disabled", "disabled");
+
+	//   Definis Data
+	var penerima_detail 	= $("#penerima_detail").val();
+	var no_detail 		    = $("#no_detail").val();
+	var alamat_detail 		= $("#alamat_detail").val();
+	var produk_detail 		= $("#produk_detail").val();
+	var qty_detail 			= $("#qty_detail").val();
+	var total_detail 		= $("#total_detail").val();
+	var harga_detail 		= $("#harga_detail").val();
+
+
+  
+  $.ajax({
+	  type : 'POST',
+	  url: '<?=site_url()?>confirm_cart/token',
+	  data : {
+		penerima_detail : penerima_detail,
+		no_detail 		: no_detail,
+		alamat_detail 	: alamat_detail,
+		produk_detail 	: produk_detail,
+		qty_detail 		: qty_detail,
+		harga_detail 	: harga_detail,
+		total_detail 	: total_detail
+	  },
+	  cache: false,
+
+	  success: function(data) {
+		  //location = data;
+
+		  console.log('token = '+data);
+		  
+		  var resultType = document.getElementById('result-type');
+		  var resultData = document.getElementById('result-data');
+
+		  function changeResult(type,data){
+			  $("#result-type").val(type);
+			  $("#result-data").val(JSON.stringify(data));
+			  //resultType.innerHTML = type;
+			  //resultData.innerHTML = JSON.stringify(data);
+		  }
+
+		  snap.pay(data, {
+			  
+			  onSuccess: function(result){
+				  changeResult('success', result);
+				  console.log(result.status_message);
+				  console.log(result);
+				  $("#payment-form").submit();
+			  },
+			  onPending: function(result){
+				  changeResult('pending', result);
+				  console.log(result.status_message);
+				  $("#payment-form").submit();
+			  },
+			  onError: function(result){
+				  changeResult('error', result);
+				  console.log(result.status_message);
+				  $("#payment-form").submit();
+			  }
+		  });
+	  }
+  });
+});
+
+</script>
+  <!-- Akhir Checkout -->
 </body>

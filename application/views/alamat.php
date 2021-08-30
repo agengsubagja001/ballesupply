@@ -37,6 +37,7 @@
 							<!-- Akhir  STRING ID PRODUK -->
                             <div class="form-group">
                                 <label for="inputAddress">Kontak</label>
+								<input type="hidden" name="ip_alamat" value="<?php echo $_SERVER['REMOTE_ADDR'];?>">
                                 <input type="hidden" name="id_pembeli" value="<?php echo id_pembeli()?>">
                                 <input type="text" name="no_telepon" class="form-control" id="telepon" placeholder="Masukan no.telepon" required>
                             </div>
@@ -83,16 +84,8 @@
                                 <label for="inputAddress">Alamat</label>
                                 <textarea value="alamat" name="alamat" id="alamat" cols="30" rows="10" placeholder="Masukan alamat lengkap (Jln,Kelurahan,RT/RW, Kecamatan, kota, provinsi, dan kodepos )" class="form-control"></textarea>
                             </div>
-                            
-                           
-                                <div class="form-group">
-                                    <label for="inputCity">Ekspedisi</label>
-                                    <select id="ekspedisi" name="ekspedisi" class="form-control">
-                                        <option value="JNE">JNE</option>  
-                                    </select>
-                                </div> 
                             <div>
-								<button type="submit" name="tambah" class="btn btn-dark" value="tambah">Lanjutkan Pembayaran</button>
+								<button type="submit" name="tambah" class="btn btn-dark" value="tambah">Confirm Alamat</button>
 								<a href="<?php echo base_url('pembayaran'); ?>" class="btn btn-outline-dark">Kembali Belanja</a>
                             </div>
                         </form>
