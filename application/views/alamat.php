@@ -39,7 +39,7 @@
                                 <label for="inputAddress">Kontak</label>
 								<input type="hidden" name="ip_alamat" value="<?php echo $_SERVER['REMOTE_ADDR'];?>">
                                 <input type="hidden" name="id_pembeli" value="<?php echo id_pembeli()?>">
-                                <input type="text" name="no_telepon" class="form-control" id="telepon" placeholder="Masukan no.telepon" required>
+                                <input type="number" name="no_telepon" class="form-control" id="telepon" placeholder="Masukan no.telepon" required>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Nama Lengkap</label>

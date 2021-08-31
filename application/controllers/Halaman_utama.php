@@ -32,6 +32,7 @@ class Halaman_utama extends CI_Controller {
 		// $this->load->view('www',$data);
 		$this->load->view('halaman_utama',$data);
 		
+		
 		// $join['query'] = $this->model_barang->join()->result();
         // $this->load->view('landing_page',$join);
 

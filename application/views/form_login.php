@@ -33,7 +33,7 @@
                       <button type="submit" value="login" class="btn btn-info form-control">Login</button>
                       
                     </form>
-                    <hr>
+                    
                     <!-- <div class="text-center">
                       <a class="small" href="<?php echo base_url('registrasi/index'); ?>"> Belum Punya Akun? Daftar!</a>
                     </div> -->

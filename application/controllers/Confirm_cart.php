@@ -121,6 +121,7 @@ class Confirm_cart extends CI_Controller {
     public function finish()
     {
     	$result = json_decode($this->input->post('result_data'),true);
+		$ip = $_SERVER['REMOTE_ADDR'];
     	$data = [
 			'order_id' => $result['order_id'],
 			'gross_amount' => $result['gross_amount'],
@@ -129,12 +130,14 @@ class Confirm_cart extends CI_Controller {
 			'bank'            => $result['va_numbers'][0]['bank'],
 			'va_number'     => $result['va_numbers'][0]['va_number'],
 			'pdf_url'       => $result['pdf_url'],
-			'status_code'   => $result['status_code']
+			'status_code'   => $result['status_code'],
+			'ip'            =>  $ip
 
 		];
 
 		$this->model_pembeli->input_data($data,'payment');
 		echo "<script>alert('Succes')</script>";
+		redirect('halaman_utama');
 
     }
 }
