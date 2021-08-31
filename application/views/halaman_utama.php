@@ -4,6 +4,7 @@
   <body>
       <!-- navbar -->
       <?php $this->load->view('partial/navbar') ?> 
+      <?php echo $this->session->flashdata('pesan'); ?>  
       <!-- function id keranjang -->
         <?php
             function id_keranjang($length = 5, $chars = '1234567890abcdefghijklmnopqrstuvwxyz')
@@ -23,14 +24,30 @@
             }
         ?>  
       <!-- akhir -->
-        
+            
+       <!--Start of Tawk.to Script-->
+            
+       <script type="text/javascript">
+                    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                    (function(){
+                    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                    s1.async=true;
+                    s1.src='https://embed.tawk.to/612c9ca9d6e7610a49b2ab1a/1feb47u9v';
+                    s1.charset='UTF-8';
+                    s1.setAttribute('crossorigin','*');
+                    s0.parentNode.insertBefore(s1,s0);
+                    })();
+                    </script>
+        <!--End of Tawk.to Script-->
     <!-- Section Slide -->
     <section class=""  >
 		<div class="container" style="max-width: 1340px;">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="border-radius: 20px;">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-					<img src="<?php echo base_url('assets/img/gambar1.jpg') ?>" class="d-block w-100"  alt="slider 1" style="border-radius: 20px;">
+					<img src="<?php echo base_url('assets/img/gambar1.jpg') ?>" class="d-blo
+                    
+                    7896-+-ck w-100"  alt="slider 1" style="border-radius: 20px;">
 					</div>
 					<div class="carousel-item">
 					<img src="<?php echo base_url('assets/img/gambar1.jpg') ?>" class="d-block w-100"  alt="slider 2" style="border-radius: 20px;">
@@ -51,6 +68,7 @@
 		</div>
     </section>
     <!-- Akhir Section slide -->
+
     <!-- Section Yang Kita suka -->
     <section>
 		<div class="container" style="max-width: 1340px;">
@@ -146,7 +164,10 @@
         </div>
     </section>
     <!-- Akhir Yang kita suka -->
-
+    
+    <!-- chat boot -->
+    <script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"155bbdb90f444969",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script>
+    <!-- akhir chat boot -->
      <!-- modal 1 -->
     <div class="modal fade" id="mdl_produk1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -188,7 +209,7 @@
                                            
                                         <div class="col-md-7 text-left">
                                         <!-- awal form post -->
-                                        <form action="<?php echo base_url('konfirmasii'); ?>" method="POST">
+                                        <form action="<?php echo base_url('detail_keranjang'); ?>" method="POST">
                                                 <p style="left: 666px; top: 333px; font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; line-height: 52px; color: #222222;">Bergo Khalisa / Bergo Maryam /Bergo Lasercut - Navy</p>
                                                 <input type="text" style="display:none" name="nama_pdk" value="Bergo Khalisa / Bergo Maryam /Bergo Lasercut - Navy">
                                                 <b style="font-family: Poppins; font-style: normal; font-weight: 600; font-size: 45px; line-height: 75px; display: flex; align-items: center; color: #000000;">Rp.33.000 </b>
@@ -258,8 +279,8 @@
                                                 <!-- row akhir atribut -->
                                                 <div class="col-md-12 text-right">
                                                     <div class="container">
-                                                    <a href="<?= base_url() ?>detail_keranjang">     
-                                                    <button class=" btn btn-warning" name ="test1" type="submit" aria-hidden="true">Tambah ke keranjang</button>
+                                                    <!-- <a href="detail_keranjang"> -->  
+                                                    <button class=" btn btn-warning" name ="test1" type="submit" aria-hidden="true">Tambah ke keranjang</button> 
                                                 </form>
                                                 <!-- akhir form post -->
                                                     </div>
@@ -295,8 +316,8 @@
                                     </div>
                                 </div>   
                             </div>
-        </div>        
-    </div>
+                         </div>        
+                      </div>
     <!-- akhir modal 1  -->
     <!-- moodal produk 2 -->
     <div class="modal fade" id="mdl_produk2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -404,8 +425,7 @@
                                                 </div> 
                                                 <!-- row akhir atribut -->
                                                 <div class="col-md-12 text-right">
-                                                    <div class="container">
-                                                    <a href="<?= base_url() ?>detail_keranjang">     
+                                                    <div class="container">  
                                                     <button class=" btn btn-warning" name ="test1" type="submit" aria-hidden="true">Tambah Ke keranjang</button>
                                                 </form>
                                                 <!-- akhir form post -->
@@ -439,11 +459,11 @@
                                             </div>
 
                                         </div>
-                                    </div>
+                                   </div>
                                 </div>   
                             </div>
-        </div>        
-    </div>
+                         </div>        
+                    </div>
     <!-- akhir modal 2 -->
     <!-- modal produk 3 -->
     <div class="modal fade" id="mdl_produk3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1149,15 +1169,17 @@
                                                 <div class="row mt-3">
                                                     <div class="col-md-5">
                                                         <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">ukuran</P>
-                                                            <select class="form-control" name="ukuran">
-                                                                <option>Pilih ukuran</option>
+                                                            <select class="custom-select" name="ukuran" id="ukuran" required>
+                                                                <option selected disabled value>Pilih ukuran</option>
 																<option value="S">S</option>
 																<option value="M">M</option>
 																<option value="L">L</option>
                                                                 <!-- <?php foreach ($gabung as $jon) :  ?> -->
                                                                     <option value=""><?php echo $jon->isi_varian ?></option>
                                                                 <!-- <?php endforeach ?> -->
-
+                                                                <div class="invalid-feedback">
+                                                                    Silahkan pilih ukuran
+                                                                </div>
                                                             </select> 
                                                     </div>
                                                     <div class="col-md-5"  >
@@ -1184,14 +1206,16 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
-                                                                <select class="form-control" name="warna">
-                                                                    <option>Pilih warna</option>
+                                                                <select class="custom-select" name="warna" id="warna" required>
+                                                                    <option selected disabled value>Pilih warna</option>
 																	<option value="Maroon">Maroon</option>
 																	<option value="Hitam">Hitam</option>
                                                                     <option value="Kuning">Kuning</option>
                                                                     <option value="Cokelat">Cokelat</option>
                                                                     <option value="Biru">Biru</option>
-
+                                                                     <div class="invalid-feedback">
+                                                                         Silahkan pilih warna
+                                                                     </div>
                                                                 </select>
                                                         </div> 
                                                             <div class="col-md-5">
