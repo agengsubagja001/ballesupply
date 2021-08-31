@@ -39,6 +39,7 @@
                     </nav>
                     <div class="card shadow mb-4">
                         <div class="card-body">
+						<?php echo $this->session->flashdata('pesan'); ?> 
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="table_id" width="100%">
                                         <thead>

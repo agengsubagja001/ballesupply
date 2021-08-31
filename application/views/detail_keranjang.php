@@ -49,7 +49,7 @@
                   <tr> 
                         <td><?php echo $kjr->nama_produk ?></td>
                         <td><?php echo $kjr->berat ?> Gram</td>
-                        <td><?php echo $kjr->harga ?></td> 
+                        <td>Rp <?php echo number_format ($kjr->harga) ?></td> 
                         <td><?php echo $kjr->qty ?></td>
                         <td><?php echo $kjr->ukuran  ?></td>
                         <td><?php echo $kjr->warna  ?></td>

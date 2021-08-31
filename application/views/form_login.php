@@ -12,6 +12,7 @@
 
         <div class="card border-2 shawdow-lg my-5">
           <div class="card-body p-0">
+          <div  class="alert alert-primary"role="alert"><center>Form ini hanya untuk Admin!</center></div>
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-12">
@@ -29,10 +30,13 @@
                         <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Masukkan Password Anda" name="password">
                         <?php echo form_error('password', '<div class="text-danger small ml-2">','</div'); ?>
                       </div>
-                      
                       <button type="submit" value="login" class="btn btn-info form-control">Login</button>
-                      
                     </form>
+                    <br>
+                    <a href="<?= base_url() ?>halaman_utama">
+                     <button type="submit" value="login" class="btn btn-outline-info form-control">kembali</button>
+                    </a>
+                    <!-- <button class="btn btn-outline-dark "><span style="color=ffff;">Kembali belanja</span></button> -->
                     <hr>
                     <!-- <div class="text-center">
                       <a class="small" href="<?php echo base_url('registrasi/index'); ?>"> Belum Punya Akun? Daftar!</a>

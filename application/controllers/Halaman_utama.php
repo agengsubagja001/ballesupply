@@ -29,6 +29,7 @@ class Halaman_utama extends CI_Controller {
 		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
 		$data['gabung']=$this->model_barang->join()->result();
 		$data['card'] = $this->model_barang->tampil_data()->result();
+		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
 		// $this->load->view('www',$data);
 		$this->load->view('halaman_utama',$data);
 		
@@ -46,6 +47,7 @@ class Halaman_utama extends CI_Controller {
     }
 	
 	function add_cart()
+	
 	{
 		$id_keranjang        = $this->input->post('id_keranjang');
 		$ip                  = $this->input->post('ip');
@@ -70,6 +72,9 @@ class Halaman_utama extends CI_Controller {
 
 
 		 $this->model_keranjang->add_cart_m($dataa,'keranjang');
+		 $this->session->set_flashdata('pesan','<div class="alert alert-primary" role="alert">
+		   Berhasil Tambah Keranjang
+	     </div>');
 		 redirect('halaman_utama');
 		
 

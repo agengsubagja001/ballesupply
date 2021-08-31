@@ -21,6 +21,8 @@ class Konfirmasii extends CI_Controller {
 	public function index()
 	{
         $data['query'] = $this->model_barang->tampil_data()->result();
+		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
 		$this->load->view('konfirmasii',$data);
 	}
+	
 }

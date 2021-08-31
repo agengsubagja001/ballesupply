@@ -198,9 +198,9 @@ class Tambah_produk extends CI_Controller {
 					$this->model_barang->input_data($data,'produk');
 					// Insert Varian
 					$this->model_barang->input_data($data_varian,'varian');
-					echo "<script>
-						alert('Data Berhasil Di Input');
-					</script>";
+					$this->session->set_flashdata('pesan','<div class="alert alert-primary" role="alert">
+		             Data berhasil di input
+	               </div>');
 					redirect('admin/tambah_produk');
 					// echo "<script>console.log('Berhasil')</script>";
 

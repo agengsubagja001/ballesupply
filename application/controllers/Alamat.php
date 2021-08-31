@@ -14,6 +14,7 @@ class Alamat extends CI_Controller {
 	// FUNCTION UNTUK MENAMPILKAN PROVINSI
 	function index() {
 		$data['provinsi']=$this->model_pembeli->get_all_provinsi();
+		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
 			
 		$data['path'] = base_url('assets');
 		
@@ -99,6 +100,7 @@ class Alamat extends CI_Controller {
 		$this->model_pembeli->input_data($data3,'tb_kota');
 		$this->model_pembeli->input_data($data4,'tb_kecamatan');
 		echo "<script>console.log('data berhasil di simpan') </script>";
+		
 	}
 
 }

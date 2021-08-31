@@ -29,6 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		// $data["card"] = $this->model_barang->tampil_data()->result();
 		$data["card"] = $this->model_barang->tampil_data()->result();
 		$data["gabung"] = $this->model_barang->tampil_data()->result();
+		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
 		$data["gabung"] = $this->model_barang->join()->result();
 		$this->load->view('halaman_utama',$data);
 		

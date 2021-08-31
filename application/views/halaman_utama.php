@@ -45,9 +45,7 @@
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="border-radius: 20px;">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-					<img src="<?php echo base_url('assets/img/gambar1.jpg') ?>" class="d-blo
-                    
-                    7896-+-ck w-100"  alt="slider 1" style="border-radius: 20px;">
+					<img src="<?php echo base_url('assets/img/gambar1.jpg') ?>" class="d-block w-100"  alt="slider 1" style="border-radius: 20px;">
 					</div>
 					<div class="carousel-item">
 					<img src="<?php echo base_url('assets/img/gambar1.jpg') ?>" class="d-block w-100"  alt="slider 2" style="border-radius: 20px;">
@@ -166,7 +164,7 @@
     <!-- Akhir Yang kita suka -->
     
     <!-- chat boot -->
-    <script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"155bbdb90f444969",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script>
+    <!-- <script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"155bbdb90f444969",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script> -->
     <!-- akhir chat boot -->
      <!-- modal 1 -->
     <div class="modal fade" id="mdl_produk1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
