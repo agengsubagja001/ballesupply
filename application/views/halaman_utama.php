@@ -162,10 +162,18 @@
         </div>
     </section>
     <!-- Akhir Yang kita suka -->
+
     
     <!-- chat boot -->
     <!-- <script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"155bbdb90f444969",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script> -->
     <!-- akhir chat boot -->
+
+    <!-- chat boot -->
+    <!-- <script>!function(e,t,a){var c=e.head||e.getElementsByTagName("head")[0],n=e.createElement("script");n.async=!0,n.defer=!0, n.type="text/javascript",n.src=t+"/static/js/chat_widget.js?config="+JSON.stringify(a),c.appendChild(n)}(document,"https://app.engati.com",{bot_key:"155bbdb90f444969",welcome_msg:true,branding_key:"default",server:"https://app.engati.com",e:"p" });</script> -->
+    <!-- akhir chat boot -->
+
+
+
      <!-- modal 1 -->
     <div class="modal fade" id="mdl_produk1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -1204,8 +1212,13 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
+<<<<<<< HEAD
                                                                 <select class="custom-select" name="warna" id="warna" required>
                                                                     <option selected disabled value>Pilih warna</option>
+=======
+                                                                <select class="form-control" name="warna" required>
+                                                                    <option>Pilih warna</option>
+>>>>>>> 6e1a5246a779e124ea128e250759b74edfded5d5
 																	<option value="Maroon">Maroon</option>
 																	<option value="Hitam">Hitam</option>
                                                                     <option value="Kuning">Kuning</option>
@@ -1455,6 +1468,42 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
+    <!-- Validasi Varian -->
+	<!-- Alert -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script> -->
+	<!-- <script>
+		function btn_tambah_varian(){
+			document.getElementById("tampil_var").style.display = "block";
+		}
+		function show_ukuran(){
+			
+			var x = document.getElementById("id_var").value;
+  			if(x == "Ukuran"){
+				document.getElementById("sect_ukuran").style.display = "block";
+				document.getElementById("sect_warna").style.display = "none";
+			  }else if(x == "Warna"){
+				document.getElementById("sect_warna").style.display = "block";
+				document.getElementById("sect_ukuran").style.display = "none";
+			  }
+		}
+	</script> -->
+	<!-- Akhir Validasi -->
+
+    <!--Start of Tawk.to Script-->
+            
+                <script type="text/javascript">
+                    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                    (function(){
+                    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                    s1.async=true;
+                    s1.src='https://embed.tawk.to/612c9ca9d6e7610a49b2ab1a/1feb47u9v';
+                    s1.charset='UTF-8';
+                    s1.setAttribute('crossorigin','*');
+                    s0.parentNode.insertBefore(s1,s0);
+                    })();
+                </script>
+        <!--End of Tawk.to Script-->
     
   </body>
 
