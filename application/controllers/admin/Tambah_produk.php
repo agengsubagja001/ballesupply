@@ -146,11 +146,9 @@ class Tambah_produk extends CI_Controller {
 			 $ekstensiGambar = strtolower(end($ekstensiGambar));
 			  // cek ekstensi foto
 			 //   $ekstensiGambarValid = ['jpg','jpeg','png','webp','PNG','JPG'];
-			  $ekstensiGambardua = explode('.',$foto_dua);
-			  $ekstensiGambardua = strtolower(end($ekstensiGambar));
+			 
 			  //   $ekstensiGambarValid = ['jpg','jpeg','png','webp','PNG','JPG'];
-			  $ekstensiGambartiga = explode('.',$foto_tiga);
-			  $ekstensiGambartiga = strtolower(end($ekstensiGambar));
+			  
 			
 			//  if( !in_array($ekstensiGambar,$ekstensiGambarValid)){
 			//  echo"<script>
@@ -165,11 +163,11 @@ class Tambah_produk extends CI_Controller {
 			  // // GENERAT NAME PHOTO 1\
 			  $encrypteddua = base64_encode($foto_dua);
 			  $encrypteddua .= '.';
-			  $encrypteddua .= $ekstensiGambardua;
+			  $encrypteddua .= $ekstensiGambar;
 			  // // GENERAT NAME PHOTO 1\
 			  $encryptetiga = base64_encode($foto_tiga);
 			  $encryptetiga .= '.';
-			  $encryptetiga .= $ekstensiGambartiga;
+			  $encryptetiga .= $ekstensiGambar;
 			
 			move_uploaded_file($foto_satu_tmp,'./assets/gambar_utama/'.$encrypted);
 			move_uploaded_file($foto_dua_tmp,'./assets/gambar_samping/'.$encrypteddua);

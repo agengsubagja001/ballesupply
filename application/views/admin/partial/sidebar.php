@@ -36,6 +36,19 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="<?php echo base_url('admin/invoice') ?>"  data-target="#transaksi" aria-expanded="true" aria-controls="collapseUtilities">
+            <!-- <i class="fas fa-book"></i> -->
+            <span>Invoice</span>
+        </a>
+        <div id="transaksi" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                
+            </div>
+        </div>
+    </li>
+
+
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="<?php echo base_url('admin/blog') ?>"  data-target="#transaksi" aria-expanded="true" aria-controls="collapseUtilities">

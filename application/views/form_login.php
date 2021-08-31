@@ -32,12 +32,16 @@
                       </div>
                       <button type="submit" value="login" class="btn btn-info form-control">Login</button>
                     </form>
+<<<<<<< HEAD
                     <br>
                     <a href="<?= base_url() ?>halaman_utama">
                      <button type="submit" value="login" class="btn btn-outline-info form-control">kembali</button>
                     </a>
                     <!-- <button class="btn btn-outline-dark "><span style="color=ffff;">Kembali belanja</span></button> -->
                     <hr>
+=======
+                    
+>>>>>>> 6e1a5246a779e124ea128e250759b74edfded5d5
                     <!-- <div class="text-center">
                       <a class="small" href="<?php echo base_url('registrasi/index'); ?>"> Belum Punya Akun? Daftar!</a>
                     </div> -->
