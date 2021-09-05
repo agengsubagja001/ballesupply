@@ -2,6 +2,8 @@
 <?php $this->load->view('partial/navbar'); ?>
 
 <body> 
+<?php foreach ($show_query as $query) : ?>
+
     <!-- dekrlerasi -->
 	<section class="content">
 		<div class="row container">
@@ -15,21 +17,20 @@
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-6">
-									<?php foreach ($buyer as $buy) :?>
+							
 									<div class="row">
 										<div class="col-md-12">
 											<span style="font-size:12px;font-weight:bold">Penerima</span>
 											<br>
-											<span style="font-weight: bold;"><?php echo $buy->nama_pembeli?></span>
+											<span style="font-weight: bold;"><?php echo $query->nama_pembeli ?></span>
 										</div>
 										<div class="col-md-12">
-											<span><?php echo $buy->no_telepon?></span>
+											<span><?php echo $query->no_telepon ?></span>
 										</div>
 										<div class="col-md-12">
-											<p><?php echo $buy->alamat?></p>
+											<p><?php echo $query->alamat ?></p>
 										</div>
 									</div>
-									<?php endforeach?>
 								</div>
 								<div class="col-md-6">
 									<div class="row">
@@ -52,8 +53,6 @@
 						<div class="col-md-12">
 							<br>
 							<table style="margin-top: 1px;">
-							
-							<?php foreach ($query as $cart) : ?>
 								<thead>
 									<tr>
 										<th style="width:400px">Produk</th>
@@ -62,11 +61,10 @@
 									</tr>
 								</thead>
 								<tr>
-									<td style="width:400px"><?php echo $cart->nama_produk ?></td>
-									<td style="width:200px"><?php echo $cart->ukuran?></td>
-									<td style="width:200px"><?php echo $cart->qty?></td>
+									<td style="width:400px"><?php echo $query->nama_produk ?></td>
+									<td style="width:200px"><?php echo $query->ukuran ?></td>
+									<td style="width:200px"><?php echo $query->qty?></td>
 								</tr>
-								<?php endforeach ?>
 							</table>
 							<hr style="width:100%">
 						</div>
@@ -84,27 +82,20 @@
 							<form id="payment-form" method="post" action="<?=site_url()?>confirm_cart/finish">
 							<input type="hidden" name="result_type" id="result-type" value="">
 								<input type="hidden" name="result_data" id="result-data" value="">
-								<?php foreach ($buyer as $buy) :?>
-									<input type="hidden" name="penerima_detail" id="penerima_detail" value="<?php echo $buy->nama_pembeli ?>">
-									<input type="hidden" value="<?php echo $buy->no_telepon?>" name="no_detail" id="no_detail">
-									<input type="hidden" value="<?php echo $buy->alamat?>" name="alamat_detail" id="alamat_detail">
-								<?php endforeach ?>
-								<?php foreach ($query as $cart) : ?>
-									<input type="hidden" value="<?php echo $cart->nama_produk ?>" name="produk_detail" id="produk_detail">
-									<input type="hidden" value="<?php echo $cart->qty?>" name="qty_detail" id="qty_detail">
-									<input type="hidden" value="<?php echo $cart->harga?>" name="harga_detail" id="harga_detail">
-								<?php endforeach?>
-								<?php foreach ($detail_keranjang as $cart_detail) : ?>
-									<input type="hidden" value="<?php echo $cart_detail->total_harga ?>" name="total_detail" id="total_detail">
-								<?php endforeach?>
+									<input type="hidden" name="penerima_detail" id="penerima_detail" value="<?php echo $query->nama_pembeli ?>">
+									<input type="hidden" value="<?php echo $query->no_telepon?>" name="no_detail" id="no_detail">
+									<input type="hidden" value="<?php echo $query->alamat?>" name="alamat_detail" id="alamat_detail">
+									<input type="hidden" value="<?php echo $query->nama_produk ?>" name="produk_detail" id="produk_detail">
+									<input type="hidden" value="<?php echo $query->qty?>" name="qty_detail" id="qty_detail">
+									<input type="hidden" value="<?php echo $query->harga?>" name="harga_detail" id="harga_detail">
+									<input type="hidden" value="<?php echo $query->total_harga ?>" name="total_detail" id="total_detail">
 								<br>
 								<button class="btn btn-dark" id="pay-button" style="width:210px;margin-bottom:10px">Lanjut Ke Pembayaran</button>
 								<br>
 								</form>
 						</div>
-						
 						</div>
-						
+						<?php endforeach?>
 					</div>
 				</div>
 				<div class="col-md-4">

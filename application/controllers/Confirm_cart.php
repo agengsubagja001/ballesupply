@@ -28,12 +28,19 @@ class Confirm_cart extends CI_Controller {
 	 */
 	public function index()
 	{
+		// Ongkir 
+		$data['ongkir'] = '';
 		$data['query'] = $this->model_keranjang->tampil_data()->result();
 		$data['buyer'] = $this->model_confirm->tampil_data_pembeli()->result();
 		$data['detail_keranjang'] = $this->model_confirm->tampil_data_detail_keranjang()->result();
 		$data['jml_qty'] = $this->model_keranjang->tampil_qty_pesanan()->result();
-        // $data['query'] = $this->model_barang->tampil_data()->result();
+		// $data['query'] = $this->model_barang->tampil_data()->result();
+		$data['show_query'] = $this->model_confirm->tampil_detail()->result();
 		$this->load->view('confirm_cart',$data);
+	}
+	public function provinsi(){
+
+		
 	}
 	public function token()
     {

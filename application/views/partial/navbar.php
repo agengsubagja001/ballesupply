@@ -11,6 +11,9 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
+						<a class="nav-link" style="color:#fff" href="<?php echo base_url('cek_resi'); ?>">Cek Resi</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" style="color:#fff" href="<?php echo base_url('blog'); ?>">Blog</a>
 					</li>
 					<li class="nav-item" style="margin-right: 20px;">

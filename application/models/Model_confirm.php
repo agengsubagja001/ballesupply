@@ -24,7 +24,14 @@ class Model_confirm extends CI_Model{
 		return $this->db->get(); 
 	 //    return $this->db->get()->result();
 		
-  }     
+  } 
+  public function tampil_detail (){
+	$query_show=$this->db->query("SELECT pembeli.nama_pembeli,keranjang.qty,pembeli.no_telepon,pembeli.alamat,keranjang.nama_produk,keranjang.berat,keranjang.harga,keranjang.ukuran,keranjang.warna,detail_keranjang.total_berat,detail_keranjang.total_harga,detail_keranjang.total_berat
+	FROM pembeli
+	INNER JOIN keranjang ON pembeli.ip = keranjang.ip
+	INNER JOIN detail_keranjang ON pembeli.ip = detail_keranjang.ip");
+	return $query_show;
+  }    
   public function input_data($data,$table){
 	$this->db->insert($table, $data);
   }

@@ -8,7 +8,13 @@ class Model_keranjang extends CI_Model{
            return $this->db->get(); 
         //    return $this->db->get()->result();
            
-     }    
+	  }    
+	  public function tampil_detail_pesanan(){
+		$ip= $_SERVER['REMOTE_ADDR'];
+		$this->db->from('detail_keranjang');
+		$this->db->where('ip',$ip);
+		return $this->db->get(); 
+	  }
      function jumlah_harga(){
         $ip= $_SERVER['REMOTE_ADDR']; 
         $this->db->select_sum('harga');
