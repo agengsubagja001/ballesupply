@@ -1097,7 +1097,7 @@
 			<!-- Card -->
 			<div class="row" id="container">
 				<?php $no = $this->uri->segment('3') + 1;
-                 foreach ($card as $pdk) : ?>
+                 foreach ($show_item as $pdk) : ?>
                     <div class="col-6 col-md-2 mt-2">
                         <a href="#" data-toggle="modal" data-target="#mdl_produkk<?php echo $pdk->id_produk ?>">
                         <div class="card_produk">
@@ -1170,24 +1170,51 @@
                                                     <p style="left: 666px; top: 333px; font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; line-height: 52px; color: #222222;"><?php echo $pdk->nama_produk ?></p>
                                                     <input type="text" style="display:none" name="nama_produk" value="<?php echo $pdk->nama_produk ?>">
                                                     <b style="font-family: Poppins; font-style: normal; font-weight: 600; font-size: 45px; line-height: 75px; display: flex; align-items: center; color: #000000;">Rp.<?php echo number_format ($pdk->harga) ?> </b>
-                                                    <input type="text" style="display:none" name="harga" value="<?php echo $pdk->harga ?>"> 
-                                                <!-- row atribut -->
+													<input type="text" style="display:none" name="harga" value="<?php echo $pdk->harga ?>"> 
+													
+                                                <!-- row atribut 1 -->
                                                 <div class="row mt-3">
                                                     <div class="col-md-5">
-                                                        <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">ukuran</P>
-                                                            <select class="custom-select" name="ukuran" id="ukuran" required>
-                                                                <option selected disabled value>Pilih ukuran</option>
-																<option value="S">S</option>
-																<option value="M">M</option>
-																<option value="L">L</option>
-                                                                <!-- <?php foreach ($gabung as $jon) :  ?> -->
-                                                                    <option value=""><?php echo $jon->isi_varian ?></option>
-                                                                <!-- <?php endforeach ?> -->
-                                                                <div class="invalid-feedback">
-                                                                    Silahkan pilih ukuran
-                                                                </div>
-                                                            </select> 
-                                                    </div>
+													
+															<!-- Varian Satu -->
+															
+															<div id="varian_satu<?php echo $pdk->id_produk ?>" style="display:none">
+																<label for="<?php echo $pdk->nama_varian ?>"><?php echo $pdk->nama_varian ?></label> 
+																<input type="hidden" value="<?php echo $pdk->nama_varian?>" name="nama_varian_satu">
+																<!-- Explode Varian 1 -->
+																<?php
+																	$row['varian_satu'] = "$pdk->isi_varian";
+
+																	$f = explode(',', $row['varian_satu']);
+
+																	echo "<select class='custom-select' name='isi_varian_satu' required>".PHP_EOL;
+																	echo "<option selected disabled value>Pilih $pdk->nama_varian </option>";
+																	// this is where you need to use count()
+																	for ($x = 0; $x < count($f); $x++) {    
+																	echo '<option value="'.$f[$x].'">'.$f[$x].'</option>'.PHP_EOL;
+																	}
+																	echo "</select>".PHP_EOL;
+																?>
+															</div>
+															<!-- Akhir Varian Satu -->
+															<!-- Akhir Explode Varian 1 -->
+															<?php 
+													
+																	if ($pdk->nama_varian == "") {
+																		echo "<script>
+																		document.getElementById('varian_satu$pdk->id_produk').style.display = 'none';
+																		console.log('Kosong');
+																		</script>";
+																		
+																	}else {
+																		echo "<script>
+																		document.getElementById('varian_satu$pdk->id_produk').style.display = 'block';
+																		console.log('Ada');
+																		</script>";
+																	}
+															?>
+													</div>
+													<!-- Akhir Row Atribut 1 -->
                                                     <div class="col-md-5"  >
                                                         <p style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">qty</p>
                                                             
@@ -1211,31 +1238,56 @@
                                                 </div>
                                                     <div class="row">
                                                         <div class="col-md-5">
-                                                            <P style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Warna</P>
-<<<<<<< HEAD
-                                                                <select class="custom-select" name="warna" id="warna" required>
-                                                                    <option selected disabled value>Pilih warna</option>
-=======
-                                                                <select class="form-control" name="warna" required>
-                                                                    <option>Pilih warna</option>
->>>>>>> 6e1a5246a779e124ea128e250759b74edfded5d5
-																	<option value="Maroon">Maroon</option>
-																	<option value="Hitam">Hitam</option>
-                                                                    <option value="Kuning">Kuning</option>
-                                                                    <option value="Cokelat">Cokelat</option>
-                                                                    <option value="Biru">Biru</option>
-                                                                     <div class="invalid-feedback">
-                                                                         Silahkan pilih warna
-                                                                     </div>
-                                                                </select>
+															
+																<div id="varian_dua<?php echo $pdk->id_produk ?>" style="display:none">
+																	<label for="<?php echo $pdk->nama_varian_dua ?>"><?php echo $pdk->nama_varian_dua ?></label>
+																	<input type="hidden" value="<?php echo $pdk->nama_varian_dua ?>" name="nama_varian_dua">
+																	<!-- Explode Varian 2 -->
+																		<?php
+																			$row['varian_dua'] = "$pdk->isi_varian_dua";
+
+																			$f = explode(',', $row['varian_dua']);
+
+																			echo "<select class='custom-select' name='isi_varian_dua' required>".PHP_EOL;
+																			echo "<option selected disabled value>Pilih $pdk->nama_varian </option>";
+																			// this is where you need to use count()
+																			for ($x = 0; $x < count($f); $x++) {    
+																			echo '<option value="'.$f[$x].'">'.$f[$x].'</option>'.PHP_EOL;
+																			}
+																			echo "</select>".PHP_EOL;
+																		?>
+																	<!-- Akhir Explode Varian 2 -->
+																</div>
+																<?php 
+																	if ($pdk->nama_varian_dua == "") {
+																		echo "<script>
+																		document.getElementById('varian_dua$pdk->id_produk').style.display = 'none';
+																		</script>";
+																	}else {
+																		echo "<script>
+																		document.getElementById('varian_dua$pdk->id_produk').style.display = 'block';
+																		</script>";
+																	}
+																?>
                                                         </div> 
                                                             <div class="col-md-5">
-                                                                <p style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Berat</p> 
                                                                 <table>
-                                                                    <td>
-                                                                        <tr><p><?php echo $pdk->berat ?> Gram</p></tr>
-                                                                        <input type="text" style="display:none" name="berat" value="<?php echo $pdk->berat ?>">
-                                                                    </td>
+																	<tr>
+																		<td style="width:150px"><p style="font-family: Poppins; font-style: normal; font-weight: 500; font-size: 20px; line-height: 30px; display: flex; align-items: center; color: #000000;">Berat</p> </td>
+																		<td style="width:150px"><span>Stok</span></td>
+																	</tr>
+																	<tr>
+																		<td style="width:150px">
+																			<p><?php echo $pdk->berat ?> Gram</p>
+																			<input type="text" style="display:none" name="berat" value="<?php echo $pdk->berat ?>">
+																		</td>
+																		<td style="width:150px">
+																			<h6><?php echo $pdk->stok ?></h6>
+																			<input type="hidden" value="<?php echo $pdk->stok ?>" name="stok">
+																			<input type="hidden" value="<?php echo $pdk->id_produk?>" name="id_produk">
+																		</td>
+																	</tr>
+                                                                    
                                                                 </table>
                                                             </div>
                                                     </div>   

@@ -17,6 +17,7 @@ class Tambah_produk extends CI_Controller {
 	public function index()
 	{
 		$data['item'] = $this->model_produk->tampil_data()->result();
+		$data['join_produk'] = $this->model_produk->join_show_produk()->result();
 		$this->load->view('admin/partial/head',$data);
 		$this->load->view('admin/tambah_produk',$data);
 
@@ -124,11 +125,16 @@ class Tambah_produk extends CI_Controller {
 			$deskripsi = $this->input->post('deskripsi');
 			$harga = $this->input->post('harga');
 			$berat = $this->input->post('berat');
+			$stok = $this->input->post('stok');
 			// Varian
 			$id_varian = $this->input->post('id_varian');
 			$id_produk = $this->input->post('id_produk');
 			$nama_varian = $this->input->post('nama_varian');
 			$isi_varian =$this->input->post('isi_varian');
+			// Varian 2
+			$nama_varian_dua = $this->input->post('nama_varian_dua');
+			$isi_varian_dua = $this->input->post('isi_varian_dua');
+
 			
 			// Foto 1
 			$foto_satu = $_FILES['foto_upload']['name'];
@@ -180,6 +186,7 @@ class Tambah_produk extends CI_Controller {
 						'deskripsi' => $deskripsi,
 						'harga' => $harga,
 						'berat'=> $berat,
+						'stok' => $stok,
 						'foto_utama'=> $encrypted,
 						'foto_samping' => $encrypteddua,
 						'foto_atas' => $encryptetiga,
@@ -187,10 +194,12 @@ class Tambah_produk extends CI_Controller {
 			);
 			// Array Varian
 			$data_varian = array(
-				'id_varian' => $id_varian,
-				'nama_varian' => $nama_varian,
-				'isi_varian'  => $isi_varian,
-				'id_produk' => $id_produk,
+				'id_varian' 		    => $id_varian,
+				'nama_varian' 			=> $nama_varian,
+				'isi_varian'  			=> $isi_varian,
+				'nama_varian_dua'       => $nama_varian_dua,
+				'isi_varian_dua'        => $isi_varian_dua,
+				'id_produk'  		    => $id_produk,
 			);
 					
 					$this->model_barang->input_data($data,'produk');

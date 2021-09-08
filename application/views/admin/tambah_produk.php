@@ -258,20 +258,26 @@
 													<input type="number" name="harga" class="form-control" placeholder="Rp.">
 												</div>
 											</div>
-											<div class="col-md-6">
+											<div class="col-md-3">
 												<div class="form-group">
 													<label>Berat (Gram)</label>
-													<input type="number" name="berat" class="form-control">
+													<input type="number" name="berat" class="form-control" placeholder="gr" required>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label for="Stok">Stok</label>
+													<input type="number" name="stok" class="form-control" placeholder="1" required>
 												</div>
 											</div>
 										</div>
 
 										
 									<!-- Varian -->
-									<div class="form-group">
-										<span>Untuk menambahkan Varian Klik button dibwah</span>
+									<div class="form-group" id="tmb_varian">
+										<span>Untuk menambahkan Varian Klik button dibawah</span>
 										<br>
-										<button type="button" class="btn btn-dark" onclick="btn_tambah_varian()" id="tmb_varian">Tambah Varian</button>
+										<button type="button" id="btn_variansatu" class="btn btn-dark" onclick="btn_tambah_varian()" >Tambah Varian</button>
 									</div>
 									<div class="form-group" style="display:none" id="tampil_var">
 										<label for="">Varian</label>
@@ -289,7 +295,33 @@
 									<!-- Warna -->
 									<div class="form-group"  id="sect_warna" style="display:none">
 										<label for="Warna">Warna</label>
-										<textarea name="" id="" cols="5" class="form-control" placeholder="maroon,hitam,hijau" rows="5"></textarea>
+										<textarea name="isi_varian" id="" cols="5" class="form-control" placeholder="maroon,hitam,hijau" rows="5"></textarea>
+									</div>
+									<!-- Varian 2 -->
+									<div id="tmb_varian_dua" style="display: none;">
+										<span>Untuk menambahkan Varian Klik button dibwah</span>
+										<br>
+										<button type="button" class="btn btn-dark" onclick="btn_tambah_varian_dua()">Tambah Varian</button>
+									</div>
+									<div class="form-group" style="display:none" id="tampil_var_dua">
+										<label for="">Varian</label>
+										<select name="nama_varian_dua" class="form-control" id="id_var_dua" onchange="show_variandua()">
+											<option >Pilih Varian</option>
+											<option value="Warna" >Warna</option>
+											<option value="Ukuran" >Ukuran</option>
+										</select>
+									</div>
+									<div class="itemdua">
+										<!-- Ukuran -->
+										<div class="form-group" style="display:none" id="sect_ukuran_dua">
+											<label for="Ukuran">Ukuran</label>
+											<textarea name="isi_varian_dua" id="" cols="5" class="form-control" rows="5" placeholder="30,33,S,M,L,XL"></textarea>
+										</div>
+										<!-- Warna -->
+										<div class="form-group"  id="sect_warna_dua" style="display:none">
+											<label for="Warna">Warna</label>
+											<textarea name="isi_varian_dua" id="" cols="5" class="form-control" placeholder="maroon,hitam,hijau" rows="5"></textarea>
+										</div>
 									</div>
 							</div>
 							<div class="modal-footer">
@@ -335,19 +367,64 @@
 	<script>
 		function btn_tambah_varian(){
 			document.getElementById("tampil_var").style.display = "block";
+			document.getElementById("btn_variansatu").style.display = "none";
+		}
+		
+		function btn_tambah_varian_dua(){
+			document.getElementById("tampil_var_dua").style.display = "block";
+			
 		}
 		function show_ukuran(){
 			
 			var x = document.getElementById("id_var").value;
+			
   			if(x == "Ukuran"){
+				
 				document.getElementById("sect_ukuran").style.display = "block";
-				document.getElementById("sect_warna").style.display = "none";
+				// Remove
+				var warna = document.getElementById("sect_warna");
+				warna.parentNode.removeChild(warna);
+				// Akhir Remove
+				document.getElementById("tmb_varian_dua").style.display = "block";
+				document.getElementById("sect_warna_dua").style.display = "none";
+				document.getElementById("sect_ukuran_dua").style.display = "none";
 			  }else if(x == "Warna"){
+				
+				// Akhir Remove
 				document.getElementById("sect_warna").style.display = "block";
-				document.getElementById("sect_ukuran").style.display = "none";
+				// Remove
+				var ukuran = document.getElementById("sect_ukuran");
+				ukuran.parentNode.removeChild(ukuran);
+				// Akhir Remove
+				document.getElementById("tmb_varian_dua").style.display = "block";
+				document.getElementById("sect_warna_dua").style.display = "none";
+				document.getElementById("sect_ukuran_dua").style.display = "none";
 			  }
+			
 		}
-	</script>
+		function show_variandua(){
+			
+			var y = document.getElementById("id_var_dua").value
+
+			if(y == "Ukuran"){
+				
+				document.getElementById("sect_ukuran_dua").style.display = "block";
+				// Remove
+				var warna_dua =	document.getElementById("sect_warna_dua");
+				warna_dua.parentNode.removeChild(warna_dua);
+				// Akhir Remove
+				document.getElementById("tmb_varian_dua").style.display = "none";
+			}else if( y = "Warna"){
+				
+				document.getElementById("sect_warna_dua").style.display = "block";
+				// Remove
+				var ukuran_dua = document.getElementById("sect_ukuran_dua");
+				ukuran_dua.parentNode.removeChild(ukuran_dua);
+				// Akhir Remove
+				document.getElementById("tmb_varian_dua").style.display = "none";
+			}
+		}
+	</script>                
 	<!-- Akhir Validasi -->
 
 </body>
