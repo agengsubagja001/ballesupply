@@ -1238,7 +1238,6 @@
                                                 </div>
                                                     <div class="row">
                                                         <div class="col-md-5">
-															
 																<div id="varian_dua<?php echo $pdk->id_produk ?>" style="display:none">
 																	<label for="<?php echo $pdk->nama_varian_dua ?>"><?php echo $pdk->nama_varian_dua ?></label>
 																	<input type="hidden" value="<?php echo $pdk->nama_varian_dua ?>" name="nama_varian_dua">
